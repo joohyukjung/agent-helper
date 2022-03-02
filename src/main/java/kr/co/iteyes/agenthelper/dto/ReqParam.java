@@ -3,11 +3,7 @@ package kr.co.iteyes.agenthelper.dto;
 import kr.co.iteyes.agenthelper.entity.enums.ReqType;
 import kr.co.iteyes.agenthelper.exception.ResourceNotValidException;
 import lombok.Data;
-import org.springframework.validation.BindException;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 
-import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
