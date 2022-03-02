@@ -1,23 +1,22 @@
 package kr.co.iteyes.agenthelper.service;
 
 import kr.co.iteyes.agenthelper.dto.ReqParam;
-import kr.co.iteyes.agenthelper.repository.AllergyRepository;
+import kr.co.iteyes.agenthelper.repository.ProcedureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.List;
 
-
-@Service("allergy")
+@Service("procedure")
 @RequiredArgsConstructor
-public class AllergyService implements ResourceService {
+public class ProcedureService implements ResourceService {
 
-    private final AllergyRepository allergyRepository;
+    private final ProcedureRepository procedureRepository;
 
     @Override
     public List getResource(ReqParam reqParam) {
-        return allergyRepository.findAllResource(reqParam.getId(),
+        return procedureRepository.findAllResource(reqParam.getId(),
                 Date.valueOf(reqParam.getStartDate()),
                 Date.valueOf(reqParam.getEndDate()));
     }
