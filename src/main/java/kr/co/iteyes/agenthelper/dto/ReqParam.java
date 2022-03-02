@@ -34,7 +34,7 @@ public class ReqParam implements Serializable {
         } catch (ParseException e) {
             throw new ResourceNotValidException(e.getMessage());
         } catch (NullPointerException e) {
-            throw new ResourceNotValidException("널이어서는 안됩니다 [startDate]");
+            throw new ResourceNotValidException("must not be null: startDate");
         }
     }
 
@@ -44,7 +44,7 @@ public class ReqParam implements Serializable {
         } catch (ParseException e) {
             throw new ResourceNotValidException(e.getMessage());
         } catch (NullPointerException e) {
-            throw new ResourceNotValidException("널이어서는 안됩니다 [endDate]");
+            throw new ResourceNotValidException("must not be null: endDate");
         }
     }
 }
