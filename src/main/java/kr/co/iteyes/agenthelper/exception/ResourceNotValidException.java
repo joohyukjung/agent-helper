@@ -1,10 +1,6 @@
 package kr.co.iteyes.agenthelper.exception;
 
 public class ResourceNotValidException extends RuntimeException {
-    public ResourceNotValidException() {
-        super();
-    }
-
     public ResourceNotValidException(String message) {
         super(message);
     }
