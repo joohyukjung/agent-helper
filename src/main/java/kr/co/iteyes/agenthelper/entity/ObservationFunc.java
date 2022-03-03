@@ -54,7 +54,6 @@ public class ObservationFunc {
     private String drNm;
     private String prctSubjCd;
     private String prctSubjNm;
-    private Date medYmd;
     private String instpSts;
     private Timestamp lastChgDt;
 }

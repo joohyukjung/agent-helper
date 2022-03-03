@@ -8,6 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface ObservationLabRepository extends JpaRepository<ObservationLab, String> {
-    @Query("select o from ObservationLab o where o.patId = :patientId and o.inspDtm between :startDate and :endDate")
+    @Query("select o from ObservationLab o where o.patNo = :patientId and o.inspDtm between :startDate and :endDate")
     List<ObservationLab> findAllResource(String patientId, Date startDate, Date endDate);
 }

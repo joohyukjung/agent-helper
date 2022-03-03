@@ -8,6 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface DiagnosticPathoRepository extends JpaRepository<DiagnosticPatho, String> {
-    @Query("select d from DiagnosticPatho d where d.patId = :patientId and d.inspDtm between :startDate and :endDate")
+    @Query("select d from DiagnosticPatho d where d.patNo = :patientId and d.inspDtm between :startDate and :endDate")
     List<DiagnosticPatho> findAllResource(String patientId, Date startDate, Date endDate);
 }

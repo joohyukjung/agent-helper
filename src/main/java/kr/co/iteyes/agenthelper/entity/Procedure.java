@@ -22,7 +22,7 @@ public class Procedure {
     private String srgCd;
     private String srgNm;
     private String anesKndCd;
-    private String anesKndNm;
+    private String anesKindNm;
     private Long drln;
     private String drId;
     private String drNm;

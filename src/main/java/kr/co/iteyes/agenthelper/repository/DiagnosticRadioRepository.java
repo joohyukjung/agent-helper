@@ -8,6 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface DiagnosticRadioRepository extends JpaRepository<DiagnosticRadio, String> {
-    @Query("select d from DiagnosticRadio d where d.patId = :patientId and d.inspDtm between :startDate and :endDate")
+    @Query("select d from DiagnosticRadio d where d.patNo = :patientId and d.inspDtm between :startDate and :endDate")
     List<DiagnosticRadio> findAllResource(String patientId, Date startDate, Date endDate);
 }

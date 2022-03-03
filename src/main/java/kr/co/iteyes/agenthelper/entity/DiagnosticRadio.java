@@ -16,7 +16,7 @@ public class DiagnosticRadio {
     private String rrno;
     private Long rcptNo;
     @Id
-    private String patId;
+    private String patNo;
     private Date mediBgngYmd;
     private String inspDiv;
     private Long rxNo;
