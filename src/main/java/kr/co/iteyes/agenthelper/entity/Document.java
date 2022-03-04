@@ -1,19 +1,22 @@
 package kr.co.iteyes.agenthelper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "TFN_PRCTDOC")
 @Getter
 public class Document {
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String cisn;
     private String rrno;
-    @Id
     private String patId;
     private String docTypCd;
     private String docTypNm;

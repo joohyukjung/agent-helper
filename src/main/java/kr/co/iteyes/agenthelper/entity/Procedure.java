@@ -1,10 +1,9 @@
 package kr.co.iteyes.agenthelper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -12,11 +11,15 @@ import java.sql.Timestamp;
 @Table(name = "TFN_SURGERY")
 @Getter
 public class Procedure {
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String cisn;
     private String rrno;
     private Long receptNo;
     private Date mediBgngYmd;
-    @Id
     private String patId;
     private Date srgDt;
     private String srgCd;

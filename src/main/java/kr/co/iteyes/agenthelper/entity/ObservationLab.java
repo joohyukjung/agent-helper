@@ -1,22 +1,25 @@
 package kr.co.iteyes.agenthelper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "TFN_INSP_LAB")
-@Getter
+@Data
 public class ObservationLab {
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String cisn;
     private String rrno;
     private Long rcptNo;
-    @Id
     private String patNo;
     private Date mediBgngYmd;
     private String inspDiv;

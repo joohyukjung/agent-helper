@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface OrganizationRepository extends JpaRepository<Organization, String> {
+public interface OrganizationRepository extends JpaRepository<Organization, Long> {
     @Query("select o from Organization o")
     List<Organization> findAllResource();
 }

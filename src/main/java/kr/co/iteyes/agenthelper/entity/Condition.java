@@ -1,10 +1,9 @@
 package kr.co.iteyes.agenthelper.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -12,10 +11,14 @@ import java.sql.Timestamp;
 @Table(name = "TFN_DIAG")
 @Getter
 public class Condition {
+    @JsonIgnore
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String cisn;
     private String rrno;
     private Long rcptNo;
-    @Id
     private String patId;
     private Long drln;
     private String drId;

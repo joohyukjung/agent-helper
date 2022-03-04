@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Date;
 import java.util.List;
 
-public interface MedicationRepository extends JpaRepository<Medication, String> {
+public interface MedicationRepository extends JpaRepository<Medication, Long> {
     @Query("select m from Medication m where m.patId = :patientId and m.rxDt between :startDate and :endDate")
     List<Medication> findAllResource(String patientId, Date startDate, Date endDate);
 }

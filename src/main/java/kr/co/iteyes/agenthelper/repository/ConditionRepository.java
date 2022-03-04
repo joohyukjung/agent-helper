@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Date;
 import java.util.List;
 
-public interface ConditionRepository extends JpaRepository<Condition, String> {
+public interface ConditionRepository extends JpaRepository<Condition, Long> {
     @Query("select c from Condition c where c.patId = :patientId and c.diagYmd between :startDate and :endDate")
     List<Condition> findAllResource(String patientId, Date startDate, Date endDate);
 }

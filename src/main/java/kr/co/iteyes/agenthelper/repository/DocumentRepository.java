@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface DocumentRepository extends JpaRepository<Document, String> {
+public interface DocumentRepository extends JpaRepository<Document, Long> {
     @Query("select d from Document d where d.patId = :patientId")
     List<Document> findAllResource(String patientId);
 }

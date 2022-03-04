@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Date;
 import java.util.List;
 
-public interface AllergyRepository extends JpaRepository<Allergy, String> {
+public interface AllergyRepository extends JpaRepository<Allergy, Long> {
     @Query("select a from Allergy a where a.patId = :patientId and a.mediBgngYmd between :startDate and :endDate")
     List<Allergy> findAllResource(String patientId, Date startDate, Date endDate);
 }
