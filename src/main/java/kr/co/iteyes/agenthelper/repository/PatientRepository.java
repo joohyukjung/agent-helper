@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface PatientRepository extends JpaRepository<Patient, String> {
-    @Query("select p from Patient p where p.patId = :patientId")
-    List<Patient> findAllResource(String patientId);
+    @Query("select p from Patient p where p.rrno = :rrno")
+    List<Patient> findAllResource(String rrno);
 }
