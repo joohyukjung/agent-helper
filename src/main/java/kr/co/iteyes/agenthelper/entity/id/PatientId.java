@@ -22,7 +22,6 @@ public class PatientId implements Serializable {
     private String sexCd;
     private String sex;
     private String brdt;
-    private String zip;
     private String addr;
     private Timestamp lastChgDt;
 }

@@ -41,7 +41,6 @@ public class Patient {
     private String sex;
     @Id
     private String brdt;
-    @Id
     private String zip;
     @Id
     private String addr;
