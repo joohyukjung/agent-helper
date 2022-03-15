@@ -9,6 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface ConditionRepository extends JpaRepository<Condition, ConditionId> {
-    @Query("select c from Condition c where c.patId = :patientId and c.diagYmd between :startDate and :endDate")
-    List<Condition> findAllResource(String patientId, Date startDate, Date endDate);
+    @Query("select c from Condition c, Encounter e where 1=1 and c.rcptNo = e.rcptNo and e.patId = :patientId and e.mediBgngYmd between :startDate and :endDate")
+    List<Condition> findAllResource(String patientId, String startDate, String endDate);
 }

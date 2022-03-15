@@ -15,6 +15,6 @@ public class EncounterService implements ResourceService {
 
     @Override
     public List getResource(ReqParam reqParam) {
-        return encounterRepository.findAllResource(reqParam.getId());
+        return encounterRepository.findAllResource(reqParam.getId(), reqParam.getStartDate(), reqParam.getEndDate());
     }
 }

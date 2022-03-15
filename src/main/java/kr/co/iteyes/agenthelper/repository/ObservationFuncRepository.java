@@ -9,6 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface ObservationFuncRepository extends JpaRepository<ObservationFunc, ObservationFuncId> {
-    @Query("select o from ObservationFunc o where o.patId = :patientId and o.inspDt between :startDate and :endDate")
-    List<ObservationFunc> findAllResource(String patientId, Date startDate, Date endDate);
+    @Query("select o from ObservationFunc o where o.patId = :patientId and o.mediBgngYmd between :startDate and :endDate")
+    List<ObservationFunc> findAllResource(String patientId, String startDate, String endDate);
 }

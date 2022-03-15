@@ -5,7 +5,6 @@ import kr.co.iteyes.agenthelper.repository.ProcedureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.util.List;
 
 @Service("procedure")
@@ -17,7 +16,7 @@ public class ProcedureService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return procedureRepository.findAllResource(reqParam.getId(),
-                Date.valueOf(reqParam.getStartDate()),
-                Date.valueOf(reqParam.getEndDate()));
+                reqParam.getStartDate(),
+                reqParam.getEndDate());
     }
 }

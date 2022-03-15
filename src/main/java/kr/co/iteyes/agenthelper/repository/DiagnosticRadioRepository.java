@@ -9,6 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface DiagnosticRadioRepository extends JpaRepository<DiagnosticRadio, DiagnosticRadioId> {
-    @Query("select d from DiagnosticRadio d where d.patId = :patientId and d.inspDt between :startDate and :endDate")
-    List<DiagnosticRadio> findAllResource(String patientId, Date startDate, Date endDate);
+    @Query("select d from DiagnosticRadio d where d.patId = :patientId and d.mediBgngYmd between :startDate and :endDate")
+    List<DiagnosticRadio> findAllResource(String patientId, String startDate, String endDate);
 }

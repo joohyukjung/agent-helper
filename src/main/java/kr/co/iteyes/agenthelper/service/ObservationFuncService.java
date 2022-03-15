@@ -17,7 +17,7 @@ public class ObservationFuncService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return observationFuncRepository.findAllResource(reqParam.getId(),
-                Date.valueOf(reqParam.getStartDate()),
-                Date.valueOf(reqParam.getEndDate()));
+                reqParam.getStartDate(),
+                reqParam.getEndDate());
     }
 }

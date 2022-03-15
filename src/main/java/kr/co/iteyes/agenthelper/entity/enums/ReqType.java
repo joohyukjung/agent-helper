@@ -19,6 +19,7 @@ public enum ReqType{
     O02("observation_lab"),
     O03("observation_func"),
     P03("procedure"),
+    I01("imaging"),
     M02("media");
 
     private String resource;

@@ -24,23 +24,23 @@ public class ReqParam implements Serializable {
     @Size(min = 8, max = 8)
     private String endDate;
 
-    public String getStartDate() {
-        try {
-            return new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyyMMdd").parse(startDate));
-        } catch (ParseException e) {
-            throw new ResourceNotValidException(e.getMessage());
-        } catch (NullPointerException e) {
-            throw new ResourceNotValidException("must not be null: startDate");
-        }
-    }
-
-    public String getEndDate() {
-        try {
-            return new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyyMMdd").parse(endDate));
-        } catch (ParseException e) {
-            throw new ResourceNotValidException(e.getMessage());
-        } catch (NullPointerException e) {
-            throw new ResourceNotValidException("must not be null: endDate");
-        }
-    }
+//    public String getStartDate() {
+//        try {
+//            return new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyyMMdd").parse(startDate));
+//        } catch (ParseException e) {
+//            throw new ResourceNotValidException(e.getMessage());
+//        } catch (NullPointerException e) {
+//            throw new ResourceNotValidException("must not be null: startDate");
+//        }
+//    }
+//
+//    public String getEndDate() {
+//        try {
+//            return new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyyMMdd").parse(endDate));
+//        } catch (ParseException e) {
+//            throw new ResourceNotValidException(e.getMessage());
+//        } catch (NullPointerException e) {
+//            throw new ResourceNotValidException("must not be null: endDate");
+//        }
+//    }
 }

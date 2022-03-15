@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface EncounterRepository extends JpaRepository<Encounter, EncounterId> {
-    @Query("select e from Encounter e where e.patId = :patientId")
-    List<Encounter> findAllResource(String patientId);
+    @Query("select e from Encounter e where e.patId = :patientId and e.mediBgngYmd between :startDate and :endDate")
+    List<Encounter> findAllResource(String patientId, String startDate, String endDate);
 }
