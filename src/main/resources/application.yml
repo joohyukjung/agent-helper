@@ -40,5 +40,36 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-  jackson:
-    property-naming-strategy: SNAKE_CASE
+
+server:
+  port: 8080
+
+---
+
+#jackson:
+#  property-naming-strategy: SNAKE_CASE
+spring:
+  config:
+    activate:
+      on-profile: pnuh
+  datasource:
+    url: jdbc:oracle:thin:@200.100.1.116:1527/testdb
+#    username: pnuhdba
+#    password: pnuhdba
+    username: mydata
+    password: '*mydata128*'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: pnuhdba
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+server:
+  port: 9092
+

@@ -1,35 +1,46 @@
 package kr.co.iteyes.agenthelper.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import kr.co.iteyes.agenthelper.entity.id.ObservationFuncId;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "TFN_INSP_FUNC")
+@IdClass(ObservationFuncId.class)
 @Getter
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ObservationFunc {
-    @JsonIgnore
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String cisn;
-    private String rrno;
+    @Id
+    private String ciNo;
+    @Id
     private Long rcptNo;
-    private String patNo;
-    private Date mediBgngYmd;
+    @Id
+    private String patId;
+    @Id
+    private String mediBgngYmd;
+    @Id
     private String inspDiv;
+    @Id
     private Long rxNo;
-    private Date inspDtm;
+    @Id
+    private Long seqNo;
+    @Id
+    private String inspDt;
+    @Id
     private String rsltNo;
+    @Id
     private Long rsltSeqNo;
     private String smplCd;
     private String smplNm;
     private String ordInspCd;
     private String inspCd;
+    @Id
     private String inspNm;
     private String inspRslt;
     private String unit;
@@ -51,11 +62,12 @@ public class ObservationFunc {
     private String dtlLwerRefVal;
     private String dtlLwerRefUnit;
     private String img;
-    private Long drln;
+    private String drln;
     private String drId;
     private String drNm;
     private String prctSubjCd;
     private String prctSubjNm;
     private String instpSts;
+    @Id
     private Timestamp lastChgDt;
 }

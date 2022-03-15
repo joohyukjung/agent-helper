@@ -1,45 +1,44 @@
 package kr.co.iteyes.agenthelper.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import kr.co.iteyes.agenthelper.entity.id.EncounterId;
 import lombok.Getter;
 
-import javax.persistence.*;
-import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "TFN_DIAG")
+@Table(name = "TFN_VHOSP")
+@IdClass(EncounterId.class)
 @Getter
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Encounter {
-    @JsonIgnore
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String cisn;
-    private String rrno;
+    @Id
+    private String ciNo;
+    @Id
     private Long rcptNo;
+    @Id
     private String patId;
-    private Long drln;
+    private String drln;
+    @Id
     private String drId;
     private String drNm;
+    @Id
     private String prctSubjCd;
     private String prctSubjNm;
-    private Date diagYmd;
-    private String diagCd;
-    private String diagNm;
-    private String diagStcd;
-    private String diagStcdNm;
-    private String diagccDiv;
-    private String roDiv;
+    @Id
     private String prctDvcd;
+    @Id
     private String prctDvcdNm;
-    private Date mediBgngYmd;
-    private Date mediEndYmd;
-    private Long diagDrln;
-    private String diagDrId;
-    private String diagDrNm;
-    private String diagPrctSubjCd;
-    private String diagPrctSubjNm;
+    @Id
+    private String mediBgngYmd;
+    private String mediEndYmd;
+    @Id
     private Timestamp lastChgDt;
 }
