@@ -1,6 +1,7 @@
 package kr.co.iteyes.agenthelper.controller;
 
 import kr.co.iteyes.agenthelper.dto.AgreementDto;
+import kr.co.iteyes.agenthelper.dto.AgreementReqDto;
 import kr.co.iteyes.agenthelper.dto.AgreementUpdateDto;
 import kr.co.iteyes.agenthelper.service.AgreementService;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,8 @@ public class AgreementController {
 
     @PostMapping("/agreement")
     ResponseEntity<AgreementDto> createAgreement(
-            @Valid @RequestBody AgreementDto agreementDto) {
-        return ResponseEntity.ok(agreementService.createAgreement(agreementDto));
+            @Valid @RequestBody AgreementReqDto agreementReqDto) {
+        return ResponseEntity.ok(agreementService.createAgreement(agreementReqDto));
     }
 
     @DeleteMapping("/agreement/{id}")

@@ -1,0 +1,12 @@
+= API Document
+:doctype: book
+:icons: font
+:toc: left
+:toclevels: 3
+
+== 동의
+
+=== 1. 동의 등록
+include::{snippets}/create-agreement/request-fields.adoc[]
+include::{snippets}/create-agreement/http-request.adoc[]
+include::{snippets}/create-agreement/http-response.adoc[]

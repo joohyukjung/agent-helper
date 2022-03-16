@@ -1,19 +1,15 @@
 package kr.co.iteyes.agenthelper.service;
 
 import kr.co.iteyes.agenthelper.dto.AgreementDto;
+import kr.co.iteyes.agenthelper.dto.AgreementReqDto;
 import kr.co.iteyes.agenthelper.dto.AgreementUpdateDto;
-import kr.co.iteyes.agenthelper.dto.ReqParam;
 import kr.co.iteyes.agenthelper.entity.Agreement;
 import kr.co.iteyes.agenthelper.exception.ResourceNotValidException;
 import kr.co.iteyes.agenthelper.repository.AgreementRepository;
-import kr.co.iteyes.agenthelper.repository.AllergyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Id;
-
-import java.sql.Date;
-import java.util.List;
+import java.sql.Timestamp;
 
 
 @Service("agreement")
@@ -22,17 +18,13 @@ public class AgreementService {
 
     private final AgreementRepository agreementRepository;
 
-    public AgreementDto createAgreement(AgreementDto agreementDto) {
+    public AgreementDto createAgreement(AgreementReqDto agreementReqDto) {
         Agreement agreement = Agreement.builder()
-                .cisn(agreementDto.getCisn())
+                .cisn(agreementReqDto.getCisn())
+                .ciNo(agreementReqDto.getCiNo())
                 .patId("1233")
-                .utilUserId(agreementDto.getUtilUserId())
-                .pvsnInstCd(1L)
-                .rcbPrctYmd("20220309")
-                .regYmd(agreementDto.getRegYmd())
-                .fhirPatIndexId("213123123")
-                .fhirOrgIndexId("123123123")
-                .lastMdfcnDt(agreementDto.getLastMdfcnDt())
+                .regYmd(agreementReqDto.getRegYmd())
+                .lastMdfcnDt(new Timestamp(System.currentTimeMillis()))
                 .build();
 
         return AgreementDto.from(agreementRepository.save(agreement));
