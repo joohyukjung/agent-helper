@@ -4,12 +4,15 @@ import kr.co.iteyes.agenthelper.dto.AgreementDto;
 import kr.co.iteyes.agenthelper.dto.AgreementReqDto;
 import kr.co.iteyes.agenthelper.dto.AgreementUpdateDto;
 import kr.co.iteyes.agenthelper.entity.Agreement;
+import kr.co.iteyes.agenthelper.exception.ResourceNotFoundException;
 import kr.co.iteyes.agenthelper.exception.ResourceNotValidException;
 import kr.co.iteyes.agenthelper.repository.AgreementRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service("agreement")
@@ -21,39 +24,56 @@ public class AgreementService {
     public AgreementDto createAgreement(AgreementReqDto agreementReqDto) {
         Agreement agreement = Agreement.builder()
                 .cisn(agreementReqDto.getCisn())
-                .ciNo(agreementReqDto.getCiNo())
-                .patId("1233")
+                .ciNo(agreementReqDto.getCiNo())    // 주민번호
+                .patId("1233")  // TODO 삭제 예정
+                .utilUserId(agreementReqDto.getUtilUserId())
+                .pvsnInstCd(agreementReqDto.getPvsnInstCd())
                 .regYmd(agreementReqDto.getRegYmd())
-                .lastMdfcnDt(new Timestamp(System.currentTimeMillis()))
                 .build();
 
         return AgreementDto.from(agreementRepository.save(agreement));
     }
 
-    public void deleteAgreement(String patientId) {
-        agreementRepository.deleteById(patientId);
+    public void deleteAgreement(String utilUserId) {
+        agreementRepository.deleteById(utilUserId);
     }
 
-    public void updateAgreement(String patientId, AgreementUpdateDto agreementUpdateDto) {
+    public AgreementDto updateAgreement(String utilUserId, AgreementUpdateDto agreementUpdateDto) {
 
-        Agreement agreement = agreementRepository.findById(patientId).orElseThrow(ResourceNotValidException::new);
+        Agreement agreement = agreementRepository.findById(utilUserId).orElseThrow(ResourceNotValidException::new);
 
-        Agreement test = Agreement.builder()
+        String fhirPatIndexid = agreement.getFhirPatIndexId();
+        String fhirOrgIndexId = agreement.getFhirOrgIndexId();
+
+        if(StringUtils.isNotBlank(agreementUpdateDto.getFhirPatIndexId())
+            && StringUtils.isNotBlank(agreementUpdateDto.getFhirOrgIndexId())) {
+            fhirPatIndexid = agreementUpdateDto.getFhirPatIndexId();
+            fhirOrgIndexId = agreementUpdateDto.getFhirOrgIndexId();
+
+            agreement.setFhirPatIndexId(fhirPatIndexid);
+            agreement.setFhirOrgIndexId(fhirOrgIndexId);
+        }
+
+        Agreement updatedAgreement = Agreement.builder()
                 .cisn(agreement.getCisn())
-                .patId(patientId)
-                .utilUserId(agreement.getUtilUserId())
+                .ciNo(agreement.getCiNo())
+                .patId(agreement.getPatId())
+                .utilUserId(utilUserId)
                 .pvsnInstCd(agreement.getPvsnInstCd())
-                .rcbPrctYmd(agreement.getRcbPrctYmd())
+                .rcbPrctYmd(agreementUpdateDto.getRcbPrctYmd())
                 .regYmd(agreement.getRegYmd())
-                .fhirPatIndexId(agreementUpdateDto.getFhirPatIndexId())
-                .fhirOrgIndexId(agreementUpdateDto.getFhirOrgIndexId())
-                .lastMdfcnDt(agreement.getLastMdfcnDt())
+                .fhirPatIndexId(fhirPatIndexid)
+                .fhirOrgIndexId(fhirOrgIndexId)
                 .build();
 
-        agreementRepository.save(test);
+        return AgreementDto.from(agreementRepository.save(updatedAgreement));
     }
 
-    public Agreement getAgreement(String patientId) {
-        return agreementRepository.findById(patientId).orElseThrow(ResourceNotValidException::new);
+    public AgreementDto getAgreement(String utilUserId) {
+        return AgreementDto.from(agreementRepository.findById(utilUserId).orElseThrow(ResourceNotFoundException::new));
+    }
+
+    public List<AgreementDto> getAgreements() {
+        return agreementRepository.findAll().stream().map(r -> AgreementDto.from(r)).collect(Collectors.toList());
     }
 }

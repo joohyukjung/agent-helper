@@ -33,6 +33,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import java.util.Iterator;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -59,6 +60,15 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleResourceNotValidException(ResourceNotValidException ex, WebRequest request) {
         log.error(ex.getMessage(), ex);
         ApiError apiError = new ApiError(BAD_REQUEST, request.getDescription(false));
+        System.out.println(ex.getLocalizedMessage());
+        apiError.setMessage(ex.getMessage());
+        return buildResponseEntity(apiError, request);
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    protected ResponseEntity<Object> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
+        log.error(ex.getMessage(), ex);
+        ApiError apiError = new ApiError(NOT_FOUND, request.getDescription(false));
         System.out.println(ex.getLocalizedMessage());
         apiError.setMessage(ex.getMessage());
         return buildResponseEntity(apiError, request);

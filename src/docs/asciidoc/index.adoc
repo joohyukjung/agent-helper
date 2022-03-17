@@ -1,3 +1,6 @@
+ifndef::snippets[]
+:snippets: ../../../build/generated-snippets
+endif::[]
 = API Document
 :doctype: book
 :icons: font
@@ -7,6 +10,20 @@
 == 동의
 
 === 1. 동의 등록
+include::{snippets}/create-agreement/curl-request.adoc[]
+==== 요청 파라미터
 include::{snippets}/create-agreement/request-fields.adoc[]
 include::{snippets}/create-agreement/http-request.adoc[]
 include::{snippets}/create-agreement/http-response.adoc[]
+
+=== 2. 동의 수정
+include::{snippets}/update-agreement/request-fields.adoc[]
+include::{snippets}/update-agreement/http-request.adoc[]
+include::{snippets}/update-agreement/http-response.adoc[]
+
+=== 3. 동의 조회
+include::{snippets}/get-agreement/path-parameters.adoc[]
+include::{snippets}/get-agreement/http-request.adoc[]
+include::{snippets}/get-agreement/request-body.adoc[]
+include::{snippets}/get-agreement/response-fields.adoc[]
+include::{snippets}/get-agreement/http-response.adoc[]

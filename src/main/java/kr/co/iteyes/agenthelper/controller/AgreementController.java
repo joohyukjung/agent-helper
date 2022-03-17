@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,24 +23,28 @@ public class AgreementController {
         return ResponseEntity.ok(agreementService.createAgreement(agreementReqDto));
     }
 
+    @GetMapping("/agreement/{id}")
+    ResponseEntity<AgreementDto> getAgreement(
+            @PathVariable("id") String utilUserId) {
+        return ResponseEntity.ok(agreementService.getAgreement(utilUserId));
+    }
+
+    @GetMapping("/agreement")
+    ResponseEntity<List<AgreementDto>> getAgreements() {
+        return ResponseEntity.ok(agreementService.getAgreements());
+    }
+
     @DeleteMapping("/agreement/{id}")
     ResponseEntity<?> deleteAgreement(
-            @PathVariable("id") String patientId) {
-        agreementService.deleteAgreement(patientId);
+            @PathVariable("id") String utilUserId) {
+        agreementService.deleteAgreement(utilUserId);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/agreement/{id}")
-    ResponseEntity<?> updateAgreement(
-            @PathVariable("id") String patientId,
+    ResponseEntity<AgreementDto> updateAgreement(
+            @PathVariable("id") String utilUserId,
             @Valid @RequestBody AgreementUpdateDto agreementUpdateDto) {
-        agreementService.updateAgreement(patientId, agreementUpdateDto);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/agreement/{id}")
-    ResponseEntity<?> getAgreement(
-            @PathVariable("id") String patientId) {
-        return ResponseEntity.ok(agreementService.getAgreement(patientId));
+        return ResponseEntity.ok(agreementService.updateAgreement(utilUserId, agreementUpdateDto));
     }
 }

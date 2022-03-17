@@ -1,16 +1,20 @@
 package kr.co.iteyes.agenthelper.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import kr.co.iteyes.agenthelper.entity.Agreement;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 
-import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Getter
+@Data
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class AgreementDto {
     private String cisn;
     private String ciNo;
