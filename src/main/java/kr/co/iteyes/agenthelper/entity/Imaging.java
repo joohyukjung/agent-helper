@@ -31,12 +31,11 @@ public class Imaging {
     private String inspDiv;
     @Id
     private String inspDt;
+    @Id
     private String ordInspCd;
     private String inspCd;
-    @Id
     private String inspNm;
     private String accNo;
-    @Id
     private String dicom;
     @Id
     private String instpSts;
@@ -45,6 +44,7 @@ public class Imaging {
     private String modalNm;
     @Id
     private String dscrp;
+    @Id
     private String bodySiteCd;
     private String bodySiteNm;
     @Id

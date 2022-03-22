@@ -35,8 +35,8 @@ public class Media {
     private String refTypeCd;
     private String refTypeNm;
     private String refTypeDesc;
-    private String modalCd;
-    private String modalNm;
+    private String eqpTypeCd;
+    private String eqpTypeNm;
     private String eqpTypeDesc;
     private String bodySiteCd;
     @Id

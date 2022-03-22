@@ -22,21 +22,26 @@ public class Procedure {
     @Id
     private String ciNo;
     @Id
-    private Long receptNo;
+    private Long rcptNo;
     @Id
-    private String mediBgngYmd;
+    private Long mediBgngYmd;
     @Id
     private String patId;
     @Id
-    private String srgDt;
+    private Long srgDt;
+    @Id
     private String srgCd;
     @Id
     private String srgNm;
+    @Id
     private String anesKndCd;
+    @Id
     private String anesKndNm;
+    @Id
     private String drln;
     @Id
     private String drId;
+    @Id
     private String drNm;
     @Id
     private String prctSubjCd;
@@ -47,7 +52,6 @@ public class Procedure {
     private String srgDrNm;
     private String srgPrctSubjCd;
     private String srgPrctSubjNm;
-    @Id
     private String srgSt;
     @Id
     private Timestamp lastChgDt;

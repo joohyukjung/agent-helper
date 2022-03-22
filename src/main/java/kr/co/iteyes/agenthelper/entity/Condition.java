@@ -29,6 +29,7 @@ public class Condition {
     private Long rcptNo;
     @Id
     private String patId;
+    @Id
     private String drln;
     @Id
     private String drId;
@@ -58,6 +59,7 @@ public class Condition {
     private String mediBgngYmd;
     @Id
     private String mediEndYmd;
+    @Id
     private String diagDrln;
     @Id
     private String diagDrId;

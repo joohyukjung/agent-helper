@@ -32,24 +32,17 @@ public class DiagnosticRadio {
     @Id
     private Long rxNo;
     @Id
-    private Long seqNo;
-    @Id
     private String inspDt;
-    @Id
     private String ordInspCd;
     private String inspCd;
-    @Id
     private String inspNm;
     private String inspRslt;
-    @Id
     private String instpSts;
     private String accNo;
     private String dicom;
     private String drln;
-    @Id
     private String drId;
     private String drNm;
-    @Id
     private String prctSubjCd;
     private String prctSubjNm;
     private String inspDrln;

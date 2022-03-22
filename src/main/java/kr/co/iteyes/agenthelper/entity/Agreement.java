@@ -26,7 +26,7 @@ public class Agreement {
     private String fhirPatIndexId;
     private String fhirOrgIndexId;
     @UpdateTimestamp
-    private Timestamp lastMdfcnDt;
+    private Timestamp lastChgDt;
 
     public void setFhirPatIndexId(String fhirPatIndexId) {
         this.fhirPatIndexId = fhirPatIndexId;

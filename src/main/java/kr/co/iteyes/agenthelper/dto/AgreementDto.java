@@ -40,7 +40,7 @@ public class AgreementDto {
                 .regYmd(agreement.getRegYmd())
                 .fhirPatIndexId(agreement.getFhirPatIndexId())
                 .fhirOrgIndexId(agreement.getFhirOrgIndexId())
-                .lastMdfcnDt(agreement.getLastMdfcnDt())
+                .lastMdfcnDt(agreement.getLastChgDt())
                 .build();
     }
 }

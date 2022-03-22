@@ -13,6 +13,7 @@ public class ConditionId implements Serializable {
     private String ciNo;
     private Long rcptNo;
     private String patId;
+    private String drln;
     private String drId;
     private String prctSubjCd;
     private String diagYmd;
@@ -26,6 +27,7 @@ public class ConditionId implements Serializable {
     private String prctDvcdNm;
     private String mediBgngYmd;
     private String mediEndYmd;
+    private String diagDrln;
     private String diagDrId;
     private String diagPrctSubjCd;
     private Timestamp lastChgDt;

@@ -14,8 +14,9 @@ public class AllergyId implements Serializable {
     private Long rcptNo;
     private String patId;
     private String mediBgngYmd;
-    private String drId;
-    private String prctSubjCd;
-    private String prctSubjNm;
+    private String alrgCozDivCd;
+    private String alrgCozCd;
+    private String alrgCozNm;
+    private String nowStsCd;
     private Timestamp lastChgDt;
 }

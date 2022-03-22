@@ -32,26 +32,18 @@ public class DiagnosticPatho {
     @Id
     private Long rxNo;
     @Id
-    private Long seqNo;
-    @Id
     private String inspDt;
     private String bxNo;
-    @Id
     private String ordInspCd;
     private String inspCd;
-    @Id
     private String inspNm;
     private String smplCd;
     private String smplNm;
-    @Id
     private String inspRslt;
-    @Id
     private String instpSts;
     private String imgRef;
     private String drln;
-    @Id
     private String drId;
-    @Id
     private String drNm;
     private String prctSubjCd;
     private String prctSubjNm;

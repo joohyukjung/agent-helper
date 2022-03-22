@@ -26,13 +26,14 @@ public class Organization {
     @Id
     private String hpcfDvnm;
     private String telno;
+    @Id
     private String zip;
     @Id
     private String addr;
+    @Id
     private String regnAddr;
     private String roadNm;
+    @Id
     private String daddrl;
     private String refAddr;
-    @Id
-    private Timestamp lastChgDt;
 }

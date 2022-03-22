@@ -16,13 +16,6 @@ public class DiagnosticPathoId implements Serializable {
     private String mediBgngYmd;
     private String inspDiv;
     private Long rxNo;
-    private Long seqNo;
     private String inspDt;
-    private String ordInspCd;
-    private String inspNm;
-    private String inspRslt;
-    private String instpSts;
-    private String drId;
-    private String drNm;
     private Timestamp lastChgDt;
 }

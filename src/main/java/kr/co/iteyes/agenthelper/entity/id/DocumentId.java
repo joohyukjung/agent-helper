@@ -12,7 +12,9 @@ public class DocumentId implements Serializable {
     private String cisn;
     private String ciNo;
     private String patId;
-    private String docCrtDt;
+    private String docTypCd;
     private String docSts;
+    private String docFrmNm;
+    private String atcf;
     private Timestamp lastChgDt;
 }

@@ -16,10 +16,8 @@ public class ObservationFuncId implements Serializable {
     private String mediBgngYmd;
     private String inspDiv;
     private Long rxNo;
-    private Long seqNo;
     private String inspDt;
     private String rsltNo;
     private Long rsltSeqNo;
-    private String inspNm;
     private Timestamp lastChgDt;
 }

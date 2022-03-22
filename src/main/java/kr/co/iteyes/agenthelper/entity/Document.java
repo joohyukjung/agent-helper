@@ -23,14 +23,16 @@ public class Document {
     private String ciNo;
     @Id
     private String patId;
-    @Id
     private String docCrtDt;
+    @Id
     private String docTypCd;
     private String docTypNm;
     @Id
     private String docSts;
     private String docFrmCd;
+    @Id
     private String docFrmNm;
+    @Id
     private String atcf;
     @Id
     private Timestamp lastChgDt;

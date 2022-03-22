@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @EqualsAndHashCode
 @NoArgsConstructor
@@ -15,12 +16,6 @@ public class DiagnosticRadioId implements Serializable {
     private String mediBgngYmd;
     private String inspDiv;
     private Long rxNo;
-    private Long seqNo;
     private String inspDt;
-    private String ordInspCd;
-    private String inspNm;
-    private String instpSts;
-    private String drId;
-    private String prctSubjCd;
-    private String lastChgDt;
+    private Timestamp lastChgDt;
 }

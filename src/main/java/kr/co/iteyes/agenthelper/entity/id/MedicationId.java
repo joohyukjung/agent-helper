@@ -18,19 +18,8 @@ public class MedicationId implements Serializable {
     private Long rxNo;
     private Long seqNo;
     private String rxDt;
-    private String rxNm;
-    private String usge;
-    private String medcChlCd;
-    private String medcChlNm;
-    private Long onceDoseQty;
-    private String unit;
+    private String rxCd;
     @Column(name = "DAY1_MEDC_CNT")
     private Long day1MedcCnt;
-    private Long medcDays;
-    private String drId;
-    private String prctSubjCd;
-    private String rxSts;
-    private String dmndSts;
-    private String selfYn;
     private Timestamp lastChgDt;
 }

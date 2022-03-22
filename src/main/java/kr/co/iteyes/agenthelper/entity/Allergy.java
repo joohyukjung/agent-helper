@@ -28,22 +28,16 @@ public class Allergy {
     private String patId;
     @Id
     private String mediBgngYmd;
+    @Id
     private String alrgCozDivCd;
     private String alrgCozDivNm;
+    @Id
     private String alrgCozCd;
+    @Id
     private String alrgCozNm;
+    @Id
     private String nowStsCd;
     private String nowStsNm;
-    private String alrgRspmtrlCd;
-    private String alrgRspmtrlNm;
-    private String drln;
-    @Id
-    private String drId;
-    private String drNm;
-    @Id
-    private String prctSubjCd;
-    @Id
-    private String prctSubjNm;
     @Id
     private Timestamp lastChgDt;
 }
