@@ -12,7 +12,7 @@ public class MediaId implements Serializable {
     private String cisn;
     private String ciNo;
     private Long rcptNo;
-    private String patId;
+    private String patNo;
     private String mediBgngYmd;
     private String createStat;
     private String refTypeCd;

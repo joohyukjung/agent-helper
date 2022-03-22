@@ -21,7 +21,7 @@ public class ObservationFunc {
     @Id
     private Long rcptNo;
     @Id
-    private String patId;
+    private String patNo;
     @Id
     private String mediBgngYmd;
     @Id

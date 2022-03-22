@@ -23,7 +23,7 @@ public class Media {
     @Id
     private Long rcptNo;
     @Id
-    private String patId;
+    private String patNo;
     @Id
     private String mediBgngYmd;
     private String imgRef;
