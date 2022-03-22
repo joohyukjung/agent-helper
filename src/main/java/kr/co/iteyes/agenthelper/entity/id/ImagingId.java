@@ -15,7 +15,7 @@ public class ImagingId implements Serializable {
     private String patId;
     private String mediBgngYmd;
     private String inspDiv;
-    private String inspDt;
+    private String inspDtm;
     private String ordInspCd;
     private String instpSts;
     private String modalCd;
