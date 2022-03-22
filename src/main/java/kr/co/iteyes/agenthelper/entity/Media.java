@@ -23,20 +23,20 @@ public class Media {
     @Id
     private Long rcptNo;
     @Id
-    private String patId;
+    private String patNo;
     @Id
     private String mediBgngYmd;
     private String imgRef;
     @Id
     private String createStat;
     private String createStatNm;
-    private Date createDt;
+    private Date createDtm;
     @Id
     private String refTypeCd;
     private String refTypeNm;
     private String refTypeDesc;
-    private String modalCd;
-    private String modalNm;
+    private String eqpTypeCd;
+    private String eqpTypeNm;
     private String eqpTypeDesc;
     private String bodySiteCd;
     @Id

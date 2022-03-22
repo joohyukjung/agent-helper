@@ -27,7 +27,6 @@ public class Patient {
     private String ciNo;
     @Id
     private String patId;
-    @Id
     private String patFlnm;
     private String patFtnm;
     private String patLtnm;
@@ -41,12 +40,17 @@ public class Patient {
     private String sex;
     @Id
     private String brdt;
+    @Id
     private String zip;
     @Id
     private String addr;
+    @Id
     private String regnAddr;
+    @Id
     private String roadNm;
+    @Id
     private String daddrl;
+    @Id
     private String refAddr;
     @Id
     private Timestamp lastChgDt;

@@ -21,7 +21,7 @@ public class ObservationFunc {
     @Id
     private Long rcptNo;
     @Id
-    private String patId;
+    private String patNo;
     @Id
     private String mediBgngYmd;
     @Id
@@ -29,9 +29,7 @@ public class ObservationFunc {
     @Id
     private Long rxNo;
     @Id
-    private Long seqNo;
-    @Id
-    private String inspDt;
+    private String inspDtm;
     @Id
     private String rsltNo;
     @Id
@@ -40,7 +38,6 @@ public class ObservationFunc {
     private String smplNm;
     private String ordInspCd;
     private String inspCd;
-    @Id
     private String inspNm;
     private String inspRslt;
     private String unit;

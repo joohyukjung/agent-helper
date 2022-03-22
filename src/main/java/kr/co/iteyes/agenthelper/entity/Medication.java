@@ -21,7 +21,7 @@ public class Medication {
     @Id
     private Long rcptNo;
     @Id
-    private String mediBgngYmd;
+    private Long mediBgngYmd;
     @Id
     private String patId;
     @Id
@@ -30,38 +30,27 @@ public class Medication {
     private Long seqNo;
     @Id
     private String rxDt;
-    private String rxCd;
     @Id
+    private String rxCd;
     private String rxNm;
     private String cnptCd;
     private String cnptNm;
-    @Id
     private String usge;
-    @Id
     private String medcChlCd;
-    @Id
     private String medcChlNm;
-    @Id
     private Long onceDoseQty;
-    @Id
     private String unit;
     @Id
     @Column(name = "DAY1_MEDC_CNT")
     private Long day1MedcCnt;
-    @Id
     private Long medcDays;
     private String drln;
-    @Id
     private String drId;
     private String drNm;
-    @Id
     private String prctSubjCd;
     private String prctSubjNm;
-    @Id
     private String rxSts;
-    @Id
     private String dmndSts;
-    @Id
     private String selfYn;
     @Id
     private Timestamp lastChgDt;

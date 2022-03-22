@@ -12,14 +12,14 @@ public class ImagingId implements Serializable {
     private String cisn;
     private String ciNo;
     private Long rcptNo;
-    private String patId;
+    private String patNo;
     private String mediBgngYmd;
     private String inspDiv;
-    private String inspDt;
-    private String inspNm;
-    private String dicom;
+    private String inspDtm;
+    private String ordInspCd;
     private String instpSts;
     private String modalCd;
     private String dscrp;
+    private String bodySiteCd;
     private Timestamp lastChgDt;
 }

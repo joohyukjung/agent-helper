@@ -24,19 +24,18 @@ public class Imaging {
     @Id
     private Long rcptNo;
     @Id
-    private String patId;
+    private String patNo;
     @Id
     private String mediBgngYmd;
     @Id
     private String inspDiv;
     @Id
-    private String inspDt;
+    private String inspDtm;
+    @Id
     private String ordInspCd;
     private String inspCd;
-    @Id
     private String inspNm;
     private String accNo;
-    @Id
     private String dicom;
     @Id
     private String instpSts;
@@ -45,6 +44,7 @@ public class Imaging {
     private String modalNm;
     @Id
     private String dscrp;
+    @Id
     private String bodySiteCd;
     private String bodySiteNm;
     @Id
