@@ -21,7 +21,7 @@ public class Medication {
     @Id
     private Long rcptNo;
     @Id
-    private String mediBgngYmd;
+    private Long mediBgngYmd;
     @Id
     private String patId;
     @Id

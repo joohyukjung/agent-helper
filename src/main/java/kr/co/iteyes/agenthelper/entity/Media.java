@@ -30,7 +30,7 @@ public class Media {
     @Id
     private String createStat;
     private String createStatNm;
-    private Date createDt;
+    private Date createDtm;
     @Id
     private String refTypeCd;
     private String refTypeNm;

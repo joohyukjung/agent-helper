@@ -29,7 +29,7 @@ public class ObservationFunc {
     @Id
     private Long rxNo;
     @Id
-    private String inspDt;
+    private String inspDtm;
     @Id
     private String rsltNo;
     @Id
