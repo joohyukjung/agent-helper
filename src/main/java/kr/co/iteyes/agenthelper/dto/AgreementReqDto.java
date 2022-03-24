@@ -1,6 +1,5 @@
 package kr.co.iteyes.agenthelper.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -17,7 +16,4 @@ public class AgreementReqDto {
     private String utilUserId;
     @NotNull
     private Long pvsnInstCd;
-    @NotNull
-    private String regYmd;
-
 }
