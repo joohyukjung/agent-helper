@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,10 +27,9 @@ public class AgreementService {
         Agreement agreement = Agreement.builder()
                 .cisn(agreementReqDto.getCisn())
                 .ciNo(agreementReqDto.getCiNo())    // 주민번호
-                .patId("1233")  // TODO 삭제 예정
                 .utilUserId(agreementReqDto.getUtilUserId())
                 .pvsnInstCd(agreementReqDto.getPvsnInstCd())
-                .regYmd(agreementReqDto.getRegYmd())
+                .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                 .build();
 
         return AgreementDto.from(agreementRepository.save(agreement));

@@ -52,7 +52,6 @@ class AgreementControllerTest {
                 .ciNo("8603061000000")
                 .utilUserId("user01")
                 .pvsnInstCd(101010L)
-                .regYmd("20220101")
                 .build();
 
         // when
@@ -71,8 +70,7 @@ class AgreementControllerTest {
                                 fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
                                 fieldWithPath("ciNo").type(JsonFieldType.STRING).description("환자 주민등록번호"),
                                 fieldWithPath("utilUserId").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID"),
-                                fieldWithPath("pvsnInstCd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호"),
-                                fieldWithPath("regYmd").type(JsonFieldType.STRING).description("등록 일자")
+                                fieldWithPath("pvsnInstCd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호")
                         )
 //                        responseFields(
 //                                fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
