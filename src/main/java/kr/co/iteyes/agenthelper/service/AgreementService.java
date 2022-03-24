@@ -29,14 +29,29 @@ public class AgreementService {
                 .ciNo(agreementReqDto.getCiNo())    // 주민번호
                 .utilUserId(agreementReqDto.getUtilUserId())
                 .pvsnInstCd(agreementReqDto.getPvsnInstCd())
+                .useYn("Y")
                 .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                 .build();
 
         return AgreementDto.from(agreementRepository.save(agreement));
     }
 
-    public void deleteAgreement(String utilUserId) {
-        agreementRepository.deleteById(utilUserId);
+    public AgreementDto deleteAgreement(String utilUserId) {
+        Agreement agreement = agreementRepository.findById(utilUserId).orElseThrow(ResourceNotValidException::new);
+
+        Agreement updatedAgreement = Agreement.builder()
+                .cisn(agreement.getCisn())
+                .ciNo(agreement.getCiNo())
+                .patId(agreement.getPatId())
+                .utilUserId(utilUserId)
+                .pvsnInstCd(agreement.getPvsnInstCd())
+                .rcbPrctYmd(agreement.getRcbPrctYmd())
+                .regYmd(agreement.getRegYmd())
+                .fhirPatIndexId(agreement.getFhirPatIndexId())
+                .fhirOrgIndexId(agreement.getFhirOrgIndexId())
+                .useYn("N")
+                .build();
+        return AgreementDto.from(agreementRepository.save(updatedAgreement));
     }
 
     public AgreementDto updateAgreement(String utilUserId, AgreementUpdateDto agreementUpdateDto) {
@@ -65,6 +80,7 @@ public class AgreementService {
                 .regYmd(agreement.getRegYmd())
                 .fhirPatIndexId(fhirPatIndexid)
                 .fhirOrgIndexId(fhirOrgIndexId)
+                .useYn(agreement.getUseYn())
                 .build();
 
         return AgreementDto.from(agreementRepository.save(updatedAgreement));

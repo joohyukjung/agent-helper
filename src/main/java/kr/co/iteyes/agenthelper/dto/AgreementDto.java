@@ -25,6 +25,7 @@ public class AgreementDto {
     private String regYmd;
     private String fhirPatIndexId;
     private String fhirOrgIndexId;
+    private String useYn;
     private Timestamp lastMdfcnDt;
 
     public static AgreementDto from(Agreement agreement) {
@@ -40,6 +41,7 @@ public class AgreementDto {
                 .regYmd(agreement.getRegYmd())
                 .fhirPatIndexId(agreement.getFhirPatIndexId())
                 .fhirOrgIndexId(agreement.getFhirOrgIndexId())
+                .useYn(agreement.getUseYn())
                 .lastMdfcnDt(agreement.getLastChgDt())
                 .build();
     }

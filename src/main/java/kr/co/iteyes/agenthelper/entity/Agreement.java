@@ -25,6 +25,7 @@ public class Agreement {
     private String regYmd;
     private String fhirPatIndexId;
     private String fhirOrgIndexId;
+    private String useYn;
     @UpdateTimestamp
     private Timestamp lastChgDt;
 
