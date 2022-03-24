@@ -35,10 +35,9 @@ public class AgreementController {
     }
 
     @DeleteMapping("/agreement/{id}")
-    ResponseEntity<?> deleteAgreement(
+    ResponseEntity<AgreementDto> deleteAgreement(
             @PathVariable("id") String utilUserId) {
-        agreementService.deleteAgreement(utilUserId);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(agreementService.deleteAgreement(utilUserId));
     }
 
     @PutMapping("/agreement/{id}")
