@@ -9,8 +9,6 @@ import java.sql.Timestamp;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class DocumentId implements Serializable {
-    private String cisn;
-    private String ciNo;
     private String patId;
     private String docTypCd;
     private String docSts;

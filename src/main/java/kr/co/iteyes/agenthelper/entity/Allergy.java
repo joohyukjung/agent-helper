@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
@@ -18,10 +17,6 @@ import java.sql.Timestamp;
 @IdClass(AllergyId.class)
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Allergy {
-    @Id
-    private String cisn;
-    @Id
-    private String ciNo;
     @Id
     private Long rcptNo;
     @Id

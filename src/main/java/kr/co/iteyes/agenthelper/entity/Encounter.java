@@ -25,13 +25,8 @@ public class Encounter {
     private Long rcptNo;
     @Id
     private String patId;
-    private String drln;
     @Id
     private String drId;
-    private String drNm;
-    @Id
-    private String prctSubjCd;
-    private String prctSubjNm;
     @Id
     private String prctDvcd;
     @Id

@@ -36,4 +36,5 @@ public class Organization {
     @Id
     private String daddrl;
     private String refAddr;
+    private Timestamp lastChgDt;
 }

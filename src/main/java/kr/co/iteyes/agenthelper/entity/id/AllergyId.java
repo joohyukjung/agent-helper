@@ -9,8 +9,6 @@ import java.sql.Timestamp;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class AllergyId implements Serializable {
-    private String cisn;
-    private String ciNo;
     private Long rcptNo;
     private String patId;
     private String mediBgngYmd;

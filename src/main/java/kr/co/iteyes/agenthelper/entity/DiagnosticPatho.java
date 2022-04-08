@@ -18,10 +18,6 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class DiagnosticPatho {
     @Id
-    private String cisn;
-    @Id
-    private String ciNo;
-    @Id
     private Long rcptNo;
     @Id
     private String patId;
@@ -31,6 +27,7 @@ public class DiagnosticPatho {
     private String inspDiv;
     @Id
     private Long rxNo;
+    private Long seqNo;
     @Id
     private String inspDt;
     private String bxNo;
@@ -42,11 +39,7 @@ public class DiagnosticPatho {
     private String inspRslt;
     private String instpSts;
     private String imgRef;
-    private String drln;
     private String drId;
-    private String drNm;
-    private String prctSubjCd;
-    private String prctSubjNm;
     @Id
     private Timestamp lastChgDt;
 }

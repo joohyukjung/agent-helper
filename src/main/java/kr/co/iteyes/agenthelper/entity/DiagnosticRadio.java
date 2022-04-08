@@ -18,10 +18,6 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class DiagnosticRadio {
     @Id
-    private String cisn;
-    @Id
-    private String ciNo;
-    @Id
     private Long rcptNo;
     @Id
     private String patId;
@@ -31,6 +27,7 @@ public class DiagnosticRadio {
     private String inspDiv;
     @Id
     private Long rxNo;
+    private Long seqNo;
     @Id
     private String inspDt;
     private String ordInspCd;
@@ -40,16 +37,8 @@ public class DiagnosticRadio {
     private String instpSts;
     private String accNo;
     private String dicom;
-    private String drln;
     private String drId;
-    private String drNm;
-    private String prctSubjCd;
-    private String prctSubjNm;
-    private String inspDrln;
     private String inspDrId;
-    private String inspDrNm;
-    private String inspPrctSubjCd;
-    private String inspPrctSubjNm;
     @Id
     private Timestamp lastChgDt;
 }
