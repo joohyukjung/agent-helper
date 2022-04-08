@@ -26,7 +26,7 @@ public class AgreementService {
     public AgreementDto createAgreement(AgreementReqDto agreementReqDto) {
         Agreement agreement = Agreement.builder()
                 .cisn(agreementReqDto.getCisn())
-                .ciNo(agreementReqDto.getCiNo())    // 주민번호
+                .rrno(agreementReqDto.getRrno())
                 .utilUserId(agreementReqDto.getUtilUserId())
                 .pvsnInstCd(agreementReqDto.getPvsnInstCd())
                 .useYn("Y")
@@ -41,7 +41,7 @@ public class AgreementService {
 
         Agreement updatedAgreement = Agreement.builder()
                 .cisn(agreement.getCisn())
-                .ciNo(agreement.getCiNo())
+                .rrno(agreement.getRrno())
                 .patId(agreement.getPatId())
                 .utilUserId(utilUserId)
                 .pvsnInstCd(agreement.getPvsnInstCd())
@@ -72,7 +72,7 @@ public class AgreementService {
 
         Agreement updatedAgreement = Agreement.builder()
                 .cisn(agreement.getCisn())
-                .ciNo(agreement.getCiNo())
+                .rrno(agreement.getRrno())
                 .patId(agreement.getPatId())
                 .utilUserId(utilUserId)
                 .pvsnInstCd(agreement.getPvsnInstCd())

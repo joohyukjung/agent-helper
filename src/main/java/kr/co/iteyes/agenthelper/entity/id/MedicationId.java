@@ -3,15 +3,12 @@ package kr.co.iteyes.agenthelper.entity.id;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 @EqualsAndHashCode
 @NoArgsConstructor
 public class MedicationId implements Serializable {
-    private String cisn;
-    private String ciNo;
     private Long rcptNo;
     private Long mediBgngYmd;
     private String patId;
@@ -19,7 +16,6 @@ public class MedicationId implements Serializable {
     private Long seqNo;
     private String rxDt;
     private String rxCd;
-    @Column(name = "DAY1_MEDC_CNT")
-    private Long day1MedcCnt;
+    private Long onceDoseQty;
     private Timestamp lastChgDt;
 }

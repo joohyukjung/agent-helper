@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Agreement {
     private String cisn;
-    private String ciNo;
+    private String rrno;
     private String patId;
     @Id
     private String utilUserId;

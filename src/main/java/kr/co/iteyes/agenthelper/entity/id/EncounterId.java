@@ -14,7 +14,6 @@ public class EncounterId implements Serializable {
     private Long rcptNo;
     private String patId;
     private String drId;
-    private String prctSubjCd;
     private String prctDvcd;
     private String prctDvcdNm;
     private String mediBgngYmd;

@@ -17,10 +17,6 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Media {
     @Id
-    private String cisn;
-    @Id
-    private String ciNo;
-    @Id
     private Long rcptNo;
     @Id
     private String patNo;
@@ -29,17 +25,20 @@ public class Media {
     private String imgRef;
     @Id
     private String createStat;
+    @Id
     private String createStatNm;
+    @Id
     private Date createDtm;
     @Id
     private String refTypeCd;
     private String refTypeNm;
     private String refTypeDesc;
+    @Id
     private String eqpTypeCd;
     private String eqpTypeNm;
     private String eqpTypeDesc;
-    private String bodySiteCd;
     @Id
+    private String bodySiteCd;
     private String bodySiteNm;
     private String bodyTypeDesc;
     @Lob

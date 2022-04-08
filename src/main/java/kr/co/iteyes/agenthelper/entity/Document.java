@@ -18,10 +18,6 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Document {
     @Id
-    private String cisn;
-    @Id
-    private String ciNo;
-    @Id
     private String patId;
     private String docCrtDt;
     @Id
