@@ -49,7 +49,7 @@ class AgreementControllerTest {
         // given
         AgreementReqDto agreementReqDto = AgreementReqDto.builder()
                 .cisn("cisn01")
-                .ciNo("8603061000000")
+                .rrno("8603061000000")
                 .utilUserId("user01")
                 .pvsnInstCd(101010L)
                 .build();
@@ -68,7 +68,7 @@ class AgreementControllerTest {
                         preprocessResponse(prettyPrint()),
                         requestFields(
                                 fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
-                                fieldWithPath("ciNo").type(JsonFieldType.STRING).description("환자 주민등록번호"),
+                                fieldWithPath("rrno").type(JsonFieldType.STRING).description("환자 주민등록번호"),
                                 fieldWithPath("utilUserId").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID"),
                                 fieldWithPath("pvsnInstCd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호")
                         )
@@ -125,7 +125,7 @@ class AgreementControllerTest {
         // given
         AgreementDto agreementDto = AgreementDto.builder()
                 .cisn("cisn01")
-                .ciNo("8603061000000")
+                .rrno("8603061000000")
                 .patId("patient01")
                 .utilUserId("user01")
                 .pvsnInstCd(101010L)
@@ -151,7 +151,7 @@ class AgreementControllerTest {
                         ),
                         responseFields(
                                 fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
-                                fieldWithPath("ci_no").type(JsonFieldType.STRING).description("환자 주민등록번호"),
+                                fieldWithPath("rrno").type(JsonFieldType.STRING).description("환자 주민등록번호"),
                                 fieldWithPath("pat_id").type(JsonFieldType.STRING).description("의료기관 환자 번호"),
                                 fieldWithPath("util_user_id").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID"),
                                 fieldWithPath("pvsn_inst_cd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호"),
