@@ -28,7 +28,7 @@ public class AgreementService {
                 .cisn(agreementReqDto.getCisn())
                 .rrno(agreementReqDto.getRrno())
                 .utilUserId(agreementReqDto.getUtilUserId())
-                .pvsnInstCd(agreementReqDto.getPvsnInstCd())
+                .pvsnInstCd(Long.parseLong(agreementReqDto.getCisn()))
                 .useYn("Y")
                 .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                 .build();

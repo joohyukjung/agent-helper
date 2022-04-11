@@ -48,10 +48,9 @@ class AgreementControllerTest {
     void createAgreement() throws Exception {
         // given
         AgreementReqDto agreementReqDto = AgreementReqDto.builder()
-                .cisn("cisn01")
-                .rrno("8603061000000")
-                .utilUserId("user01")
-                .pvsnInstCd(101010L)
+                .cisn("21100021")
+                .rrno("7107061902425")
+                .utilUserId("800000001")
                 .build();
 
         // when
@@ -69,8 +68,7 @@ class AgreementControllerTest {
                         requestFields(
                                 fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
                                 fieldWithPath("rrno").type(JsonFieldType.STRING).description("환자 주민등록번호"),
-                                fieldWithPath("utilUserId").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID"),
-                                fieldWithPath("pvsnInstCd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호")
+                                fieldWithPath("utilUserId").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID")
                         )
 //                        responseFields(
 //                                fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
@@ -124,14 +122,14 @@ class AgreementControllerTest {
     void getAgreement() throws Exception {
         // given
         AgreementDto agreementDto = AgreementDto.builder()
-                .cisn("cisn01")
-                .rrno("8603061000000")
+                .cisn("21100021")
+                .rrno("7107061902425")
                 .patId("patient01")
-                .utilUserId("user01")
-                .pvsnInstCd(101010L)
+                .utilUserId("800000001")
+                .pvsnInstCd(21100021L)
                 .rcbPrctYmd("20220101")
-                .fhirPatIndexId("fp001")
-                .fhirOrgIndexId("fo001")
+                .fhirPatIndexId("12345")
+                .fhirOrgIndexId("67890")
                 .regYmd("20220101")
                 .lastMdfcnDt(new Timestamp(System.currentTimeMillis()))
                 .build();

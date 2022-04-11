@@ -14,6 +14,4 @@ public class AgreementReqDto {
     private String rrno; // 최초 동의등록 일 때, 복호화된 주민번호 (이후 pat_id 등록되고 삭제 됨)
     @NotNull
     private String utilUserId;
-    @NotNull
-    private Long pvsnInstCd;
 }

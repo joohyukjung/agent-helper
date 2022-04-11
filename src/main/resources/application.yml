@@ -46,6 +46,31 @@ server:
 
 ---
 
+---
+
+spring:
+  config:
+    activate:
+      on-profile: pnuh_dev
+  datasource:
+    url: jdbc:oracle:thin:@database-4.cjedioeqnhkl.ap-northeast-2.rds.amazonaws.com/staging
+    username: pnuh
+    password: pnuh1234
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+server:
+  port: 9092
+
+---
+
 #jackson:
 #  property-naming-strategy: SNAKE_CASE
 spring:
