@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface ProcedureRepository extends JpaRepository<Procedure, ProcedureId> {
     @Query("select p from Procedure p where p.patId = :patientId and p.mediBgngYmd between :startDate and :endDate")
-    List<Procedure> findAllResource(String patientId, String startDate, String endDate);
+    List<Procedure> findAllResource(String patientId, Long startDate, Long endDate);
 }
