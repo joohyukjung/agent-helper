@@ -118,47 +118,47 @@ class AgreementControllerTest {
                 ));
     }
 
-    @Test
-    void getAgreement() throws Exception {
-        // given
-        AgreementDto agreementDto = AgreementDto.builder()
-                .cisn("21100021")
-                .rrno("7107061902425")
-                .patId("patient01")
-                .utilUserId("800000001")
-                .pvsnInstCd(21100021L)
-                .rcbPrctYmd("20220101")
-                .fhirPatIndexId("12345")
-                .fhirOrgIndexId("67890")
-                .regYmd("20220101")
-                .lastMdfcnDt(new Timestamp(System.currentTimeMillis()))
-                .build();
-        when(agreementService.getAgreement(any())).thenReturn(agreementDto);
-
-        // when
-        ResultActions result = this.mockMvc.perform(
-                get("/agreement/{utilUserId}", agreementDto.getUtilUserId())
-                        .accept(MediaType.APPLICATION_JSON)
-        );
-
-        // then
-        result.andExpect(status().isOk())
-                .andDo(document("get-agreement",
-                        pathParameters(
-                                parameterWithName("utilUserId").description("마이헬스웨이에서 생성된 환자 ID")
-                        ),
-                        responseFields(
-                                fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
-                                fieldWithPath("rrno").type(JsonFieldType.STRING).description("환자 주민등록번호"),
-                                fieldWithPath("pat_id").type(JsonFieldType.STRING).description("의료기관 환자 번호"),
-                                fieldWithPath("util_user_id").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID"),
-                                fieldWithPath("pvsn_inst_cd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호"),
-                                fieldWithPath("rcb_prct_ymd").type(JsonFieldType.STRING).description("최근 방문 일자"),
-                                fieldWithPath("reg_ymd").type(JsonFieldType.STRING).description("등록 일자"),
-                                fieldWithPath("fhir_pat_index_id").type(JsonFieldType.STRING).description("FHIR 환자 Resource INDEX ID"),
-                                fieldWithPath("fhir_org_index_id").type(JsonFieldType.STRING).description("FHIR 의료기관 Resource INDEX ID"),
-                                fieldWithPath("last_mdfcn_dt").type(JsonFieldType.STRING).description("최종 변경 일시")
-                        )
-                ));
-    }
+//    @Test
+//    void getAgreement() throws Exception {
+//        // given
+//        AgreementDto agreementDto = AgreementDto.builder()
+//                .cisn("21100021")
+//                .rrno("7107061902425")
+//                .patId("patient01")
+//                .utilUserId("800000001")
+//                .pvsnInstCd(21100021L)
+//                .rcbPrctYmd("20220101")
+//                .fhirPatIndexId("12345")
+//                .fhirOrgIndexId("67890")
+//                .regYmd("20220101")
+//                .lastMdfcnDt(new Timestamp(System.currentTimeMillis()))
+//                .build();
+//        when(agreementService.getAgreement(any())).thenReturn(agreementDto);
+//
+//        // when
+//        ResultActions result = this.mockMvc.perform(
+//                get("/agreement/{utilUserId}", agreementDto.getUtilUserId())
+//                        .accept(MediaType.APPLICATION_JSON)
+//        );
+//
+//        // then
+//        result.andExpect(status().isOk())
+//                .andDo(document("get-agreement",
+//                        pathParameters(
+//                                parameterWithName("utilUserId").description("마이헬스웨이에서 생성된 환자 ID")
+//                        ),
+//                        responseFields(
+//                                fieldWithPath("cisn").type(JsonFieldType.STRING).description("의료기관의 고유 번호(심평원)"),
+//                                fieldWithPath("rrno").type(JsonFieldType.STRING).description("환자 주민등록번호"),
+//                                fieldWithPath("pat_id").type(JsonFieldType.STRING).description("의료기관 환자 번호"),
+//                                fieldWithPath("util_user_id").type(JsonFieldType.STRING).description("마이헬스웨이에서 생성된 환자 ID"),
+//                                fieldWithPath("pvsn_inst_cd").type(JsonFieldType.NUMBER).description("마이헬스웨이에서 생성된 기관 번호"),
+//                                fieldWithPath("rcb_prct_ymd").type(JsonFieldType.STRING).description("최근 방문 일자"),
+//                                fieldWithPath("reg_ymd").type(JsonFieldType.STRING).description("등록 일자"),
+//                                fieldWithPath("fhir_pat_index_id").type(JsonFieldType.STRING).description("FHIR 환자 Resource INDEX ID"),
+//                                fieldWithPath("fhir_org_index_id").type(JsonFieldType.STRING).description("FHIR 의료기관 Resource INDEX ID"),
+//                                fieldWithPath("last_mdfcn_dt").type(JsonFieldType.STRING).description("최종 변경 일시")
+//                        )
+//                ));
+//    }
 }
