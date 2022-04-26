@@ -4,6 +4,7 @@ import kr.co.iteyes.agenthelper.dto.AgreementDto;
 import kr.co.iteyes.agenthelper.dto.AgreementReqDto;
 import kr.co.iteyes.agenthelper.dto.AgreementUpdateDto;
 import kr.co.iteyes.agenthelper.entity.Agreement;
+import kr.co.iteyes.agenthelper.exception.DuplicateException;
 import kr.co.iteyes.agenthelper.exception.ResourceNotFoundException;
 import kr.co.iteyes.agenthelper.exception.ResourceNotValidException;
 import kr.co.iteyes.agenthelper.repository.AgreementRepository;
@@ -24,6 +25,11 @@ public class AgreementService {
     private final AgreementRepository agreementRepository;
 
     public AgreementDto createAgreement(AgreementReqDto agreementReqDto) {
+        agreementRepository.findById(agreementReqDto.getUtilUserId())
+                .ifPresent(key -> {
+                    throw new DuplicateException("Already agreed");
+                });
+
         Agreement agreement = Agreement.builder()
                 .cisn(agreementReqDto.getCisn())
                 .rrno(agreementReqDto.getRrno())
@@ -34,6 +40,17 @@ public class AgreementService {
                 .build();
 
         return AgreementDto.from(agreementRepository.save(agreement));
+    }
+
+    private Agreement newAgreement(AgreementReqDto agreementReqDto) {
+        return  Agreement.builder()
+                .cisn(agreementReqDto.getCisn())
+                .rrno(agreementReqDto.getRrno())
+                .utilUserId(agreementReqDto.getUtilUserId())
+                .pvsnInstCd(Long.parseLong(agreementReqDto.getCisn()))
+                .useYn("Y")
+                .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
+                .build();
     }
 
     public AgreementDto deleteAgreement(String utilUserId) {
