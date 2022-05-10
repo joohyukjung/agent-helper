@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -25,21 +26,20 @@ public class AgreementService {
     private final AgreementRepository agreementRepository;
 
     public AgreementDto createAgreement(AgreementReqDto agreementReqDto) {
-        agreementRepository.findById(agreementReqDto.getUtilUserId())
-                .ifPresent(key -> {
-                    throw new DuplicateException("Already agreed");
-                });
-
-        Agreement agreement = Agreement.builder()
-                .cisn(agreementReqDto.getCisn())
-                .rrno(agreementReqDto.getRrno())
-                .utilUserId(agreementReqDto.getUtilUserId())
-                .pvsnInstCd(Long.parseLong(agreementReqDto.getCisn()))
-                .useYn("Y")
-                .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
-                .build();
-
-        return AgreementDto.from(agreementRepository.save(agreement));
+        Optional<Agreement> agreement = agreementRepository.findById(agreementReqDto.getUtilUserId());
+        if(agreement.isPresent()) {
+            return AgreementDto.from(agreement.get());
+        } else {
+            Agreement newAgreement = Agreement.builder()
+                    .cisn(agreementReqDto.getCisn())
+                    .rrno(agreementReqDto.getRrno())
+                    .utilUserId(agreementReqDto.getUtilUserId())
+                    .pvsnInstCd(Long.parseLong(agreementReqDto.getCisn()))
+                    .useYn("Y")
+                    .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
+                    .build();
+            return AgreementDto.from(agreementRepository.save(newAgreement));
+        }
     }
 
     private Agreement newAgreement(AgreementReqDto agreementReqDto) {
