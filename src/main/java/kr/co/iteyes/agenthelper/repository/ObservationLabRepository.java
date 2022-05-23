@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ObservationLabRepository extends JpaRepository<ObservationLab, ObservationLabId> {
-    @Query("select o from ObservationLab o, Encounter e where 1=1 and o.rcptNo = e.rcptNo and e.patId = :patientId and e.mediBgngYmd between :startDate and :endDate")
-    List<ObservationLab> findAllResource(String patientId, String startDate, String endDate);
+    @Query("select o from ObservationLab o where o.patId = :patientId and o.rcptNo = :rcptNo")
+    List<ObservationLab> findAllResource(String patientId, Long rcptNo);
 }

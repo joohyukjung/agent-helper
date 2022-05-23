@@ -9,6 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface MedicationRepository extends JpaRepository<Medication, MedicationId> {
-    @Query("select m from Medication m where m.patId = :patientId and m.mediBgngYmd between :startDate and :endDate")
-    List<Medication> findAllResource(String patientId, Long startDate, Long endDate);
+    @Query("select m from Medication m where m.patId = :patientId and m.rcptNo = :rcptNo")
+    List<Medication> findAllResource(String patientId, Long rcptNo);
 }

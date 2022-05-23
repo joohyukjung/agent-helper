@@ -9,6 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface AllergyRepository extends JpaRepository<Allergy, AllergyId> {
-    @Query("select a from Allergy a where a.patId = :patientId and a.mediBgngYmd between :startDate and :endDate")
-    List<Allergy> findAllResource(String patientId, String startDate, String endDate);
+    @Query("select a from Allergy a where a.rcptNo = :patientId and a.rcptNo = :rcptNo")
+    List<Allergy> findAllResource(String patientId, Long rcptNo);
 }

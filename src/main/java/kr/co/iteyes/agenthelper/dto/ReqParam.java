@@ -24,6 +24,8 @@ public class ReqParam implements Serializable {
     @Size(min = 8, max = 8)
     private String endDate;
 
+    private String rcptNo;
+
 //    public String getStartDate() {
 //        try {
 //            return new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyyMMdd").parse(startDate));
@@ -43,4 +45,13 @@ public class ReqParam implements Serializable {
 //            throw new ResourceNotValidException("must not be null: endDate");
 //        }
 //    }
+
+    public String getRcptNo() {
+        try {
+            Long.parseLong(rcptNo);
+            return rcptNo;
+        } catch (Exception e) {
+            return "0";
+        }
+    }
 }

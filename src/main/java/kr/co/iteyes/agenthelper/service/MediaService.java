@@ -15,6 +15,7 @@ public class MediaService implements ResourceService{
 
     @Override
     public List getResource(ReqParam reqParam) {
-        return mediaRepository.findAllResource(reqParam.getId(), reqParam.getStartDate(), reqParam.getEndDate());
+        return mediaRepository.findAllResource(reqParam.getId(),
+                Long.parseLong(reqParam.getRcptNo()));
     }
 }

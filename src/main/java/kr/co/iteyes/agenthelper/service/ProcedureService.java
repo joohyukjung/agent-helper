@@ -16,7 +16,6 @@ public class ProcedureService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return procedureRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getStartDate()),
-                Long.parseLong(reqParam.getEndDate()));
+                Long.parseLong(reqParam.getRcptNo()));
     }
 }

@@ -15,7 +15,6 @@ public class MedicationService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return medicationRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getStartDate()),
-                Long.parseLong(reqParam.getEndDate()));
+                Long.parseLong(reqParam.getRcptNo()));
     }
 }

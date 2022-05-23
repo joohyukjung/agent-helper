@@ -15,6 +15,7 @@ public class ImagingService implements ResourceService {
 
     @Override
     public List getResource(ReqParam reqParam) {
-        return imagingRepository.findAllResource(reqParam.getId(), reqParam.getStartDate(), reqParam.getEndDate());
+        return imagingRepository.findAllResource(reqParam.getId(),
+                Long.parseLong(reqParam.getRcptNo()));
     }
 }
