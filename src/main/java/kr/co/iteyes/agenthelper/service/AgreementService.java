@@ -34,7 +34,7 @@ public class AgreementService {
                     .cisn(agreementReqDto.getCisn())
                     .rrno(agreementReqDto.getRrno())
                     .utilUserId(agreementReqDto.getUtilUserId())
-                    .pvsnInstCd(Long.parseLong(agreementReqDto.getCisn()))
+                    .pvsnInstCd(Long.parseLong(agreementReqDto.getServiceUID()))
                     .useYn("Y")
                     .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                     .build();
@@ -47,7 +47,7 @@ public class AgreementService {
                 .cisn(agreementReqDto.getCisn())
                 .rrno(agreementReqDto.getRrno())
                 .utilUserId(agreementReqDto.getUtilUserId())
-                .pvsnInstCd(Long.parseLong(agreementReqDto.getCisn()))
+                .pvsnInstCd(Long.parseLong(agreementReqDto.getServiceUID()))
                 .useYn("Y")
                 .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                 .build();
