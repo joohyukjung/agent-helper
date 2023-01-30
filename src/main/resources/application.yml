@@ -109,8 +109,6 @@ spring:
     username: devadminjjg
     password: 'wjstkstlf1!'
     driver-class-name: oracle.jdbc.OracleDriver
-    hikari:
-      schema: pnuhdba
   jpa:
     database-platform: org.hibernate.dialect.Oracle10gDialect
     hibernate:
