@@ -18,31 +18,17 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Imaging {
     @Id
+    private Long seqNo;
     private Long rcptNo;
     @Id
     private String patNo;
-    @Id
-    private String mediBgngYmd;
-    @Id
-    private String inspDiv;
-    @Id
-    private String inspDtm;
-    @Id
-    private String ordInspCd;
-    private String inspCd;
-    private String inspNm;
-    private String accNo;
-    private String dicom;
-    @Id
+    private String inspDt;
     private String instpSts;
-    @Id
+    private String dcmSerieseUid;
     private String modalCd;
     private String modalNm;
-    @Id
-    private String dscrp;
-    @Id
+    private String description;
     private String bodySiteCd;
     private String bodySiteNm;
-    @Id
     private Timestamp lastChgDt;
 }

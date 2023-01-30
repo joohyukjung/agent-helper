@@ -10,9 +10,5 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class DocumentId implements Serializable {
     private String patId;
-    private String docTypCd;
-    private String docSts;
-    private String docFrmNm;
-    private String atcf;
     private Timestamp lastChgDt;
 }

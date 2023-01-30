@@ -18,20 +18,11 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Encounter {
     @Id
-    private String cisn;
-    @Id
-    private String ciNo;
-    @Id
     private Long rcptNo;
-    @Id
+    private String rcptStsCd;
     private String patId;
-    @Id
     private String drId;
-    @Id
     private String prctDvcd;
-    @Id
-    private String prctDvcdNm;
-    @Id
     private String mediBgngYmd;
     private String mediEndYmd;
     @Id

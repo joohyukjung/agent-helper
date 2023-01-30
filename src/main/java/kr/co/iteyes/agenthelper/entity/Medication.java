@@ -15,26 +15,19 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Medication {
     @Id
-    private Long rcptNo;
+    private Long seqNo;
     @Id
+    private Long rcptNo;
     private Long mediBgngYmd;
     @Id
     private String patId;
-    @Id
-    private Long rxNo;
-    @Id
-    private Long seqNo;
-    @Id
     private String rxDt;
-    @Id
     private String rxCd;
     private String rxNm;
-    private String cnptCd;
-    private String cnptNm;
     private String usge;
     private String medcChlCd;
     private String medcChlNm;
-    @Id
+    private String medcChlTxt;
     private Long onceDoseQty;
     private String unit;
     @Column(name = "DAY1_MEDC_CNT")

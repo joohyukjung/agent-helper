@@ -18,21 +18,20 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Allergy {
     @Id
+    private Long seqNo;
     private Long rcptNo;
     @Id
     private String patId;
-    @Id
+    private String alrgDt;
     private String mediBgngYmd;
-    @Id
     private String alrgCozDivCd;
     private String alrgCozDivNm;
-    @Id
     private String alrgCozCd;
-    @Id
     private String alrgCozNm;
-    @Id
+    private String alrgCozTxt;
     private String nowStsCd;
     private String nowStsNm;
-    @Id
+    private String drNote;
+    private String drId;
     private Timestamp lastChgDt;
 }

@@ -7,7 +7,6 @@ import lombok.Getter;
 
 import javax.persistence.*;
 import java.sql.Blob;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
@@ -17,32 +16,23 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Media {
     @Id
+    private Long seqNo;
     private Long rcptNo;
     @Id
     private String patNo;
-    @Id
-    private String mediBgngYmd;
-    private String imgRef;
-    @Id
     private String createStat;
-    @Id
-    private String createStatNm;
-    @Id
-    private Date createDtm;
-    @Id
+    private String creatDt;
     private String refTypeCd;
     private String refTypeNm;
     private String refTypeDesc;
-    @Id
-    private String eqpTypeCd;
-    private String eqpTypeNm;
+    private String modalCd;
+    private String modalNm;
+    private String modalTxt;
     private String eqpTypeDesc;
-    @Id
     private String bodySiteCd;
     private String bodySiteNm;
     private String bodyTypeDesc;
     @Lob
     private Blob refData;
-    @Id
     private Timestamp lastChgDt;
 }

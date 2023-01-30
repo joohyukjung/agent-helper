@@ -4,20 +4,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @EqualsAndHashCode
 @NoArgsConstructor
 public class ImagingId implements Serializable {
-    private Long rcptNo;
+    private Long seqNo;
     private String patNo;
-    private String mediBgngYmd;
-    private String inspDiv;
-    private String inspDtm;
-    private String ordInspCd;
-    private String instpSts;
-    private String modalCd;
-    private String dscrp;
-    private String bodySiteCd;
-    private Timestamp lastChgDt;
 }

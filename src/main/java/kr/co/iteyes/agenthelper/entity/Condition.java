@@ -22,35 +22,18 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Condition {
     @Id
+    private Long seqNo;
     private Long rcptNo;
     @Id
     private String patId;
-    @Id
     private String drId;
-    @Id
     private String diagYmd;
-    @Id
     private String diagCd;
-    @Id
     private String diagNm;
-    @Id
+    private String diagTxt;
     private String diagStcd;
-    @Id
-    private String diagStcdNm;
-    @Id
     private String diagccDiv;
-    @Id
-    private String roDiv;
-    @Id
-    private String prctDvcd;
-    @Id
-    private String prctDvcdNm;
-    @Id
     private String mediBgngYmd;
-    @Id
     private String mediEndYmd;
-    @Id
-    private String diagDrId;
-    @Id
     private Timestamp lastChgDt;
 }

@@ -15,27 +15,15 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ObservationFunc {
     @Id
+    private Long seqNo;
     private Long rcptNo;
     @Id
-    private String patNo;
-    @Id
-    private String mediBgngYmd;
-    @Id
+    private String patId;
     private String inspDiv;
-    @Id
-    private Long rxNo;
-    private Long seqNo;
-    @Id
-    private String inspDtm;
-    @Id
-    private String rsltNo;
-    @Id
-    private Long rsltSeqNo;
-    private String smplCd;
-    private String smplNm;
-    private String ordInspCd;
+    private String inspDt;
     private String inspCd;
     private String inspNm;
+    private String inspTxt;
     private String inspRslt;
     private String unit;
     private String absnRsnCd;
@@ -44,20 +32,8 @@ public class ObservationFunc {
     private String upRefUnit;
     private String lwerRefVal;
     private String lwerRefUnit;
-    private String dtlInspCd;
-    private String dtlInspNm;
-    private String dtlRsltValu;
-    private String dtlUnit;
-    @Column(name = "DTL_A6BSN_RSN_CD")
-    private String dtlA6bsnRsnCd;
-    private String dtlAbsnRsnNm;
-    private String dtlUpRefVal;
-    private String dtlUpRefUnit;
-    private String dtlLwerRefVal;
-    private String dtlLwerRefUnit;
     private String img;
     private String drId;
     private String instpSts;
-    @Id
     private Timestamp lastChgDt;
 }

@@ -18,27 +18,20 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class DiagnosticRadio {
     @Id
+    private Long seqNo;
     private Long rcptNo;
     @Id
     private String patId;
-    @Id
-    private String mediBgngYmd;
-    @Id
     private String inspDiv;
-    @Id
-    private Long rxNo;
-    private Long seqNo;
-    @Id
     private String inspDt;
-    private String ordInspCd;
     private String inspCd;
     private String inspNm;
+    private String inspTxt;
     private String inspRslt;
     private String instpSts;
     private String accNo;
     private String dicom;
     private String drId;
     private String inspDrId;
-    @Id
     private Timestamp lastChgDt;
 }

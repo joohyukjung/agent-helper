@@ -3,6 +3,7 @@ package kr.co.iteyes.agenthelper.entity.id;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -13,19 +14,7 @@ import java.sql.Timestamp;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class PatientId implements Serializable {
-    private String cisn;
-    private String ciNo;
     private String patId;
-    private String telno;
-    private String emlAddr;
-    private String sexCd;
-    private String sex;
-    private String brdt;
-    private String zip;
-    private String addr;
-    private String regnAddr;
-    private String roadNm;
-    private String daddrl;
-    private String refAddr;
+    private String patFlnm;
     private Timestamp lastChgDt;
 }

@@ -20,15 +20,11 @@ public class Document {
     @Id
     private String patId;
     private String docCrtDt;
-    @Id
     private String docTypCd;
     private String docTypNm;
-    @Id
+    private String docTypTxt;
     private String docSts;
     private String docFrmCd;
-    @Id
-    private String docFrmNm;
-    @Id
     private String atcf;
     @Id
     private Timestamp lastChgDt;

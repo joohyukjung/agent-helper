@@ -22,35 +22,20 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Patient {
     @Id
-    private String cisn;
-    @Id
-    private String ciNo;
-    @Id
     private String patId;
+    @Id
     private String patFlnm;
     private String patFtnm;
     private String patLtnm;
-    @Id
     private String telno;
-    @Id
     private String emlAddr;
-    @Id
     private String sexCd;
-    @Id
-    private String sex;
-    @Id
     private String brdt;
-    @Id
     private String zip;
-    @Id
     private String addr;
-    @Id
     private String regnAddr;
-    @Id
     private String roadNm;
-    @Id
     private String daddrl;
-    @Id
     private String refAddr;
     @Id
     private Timestamp lastChgDt;

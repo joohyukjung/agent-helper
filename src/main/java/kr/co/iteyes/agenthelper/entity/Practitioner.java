@@ -18,19 +18,14 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Practitioner {
     @Id
-    private String cisn;
-    @Id
-    private String drln;
-    @Id
     private String drId;
     @Id
     private String subjCd;
-    @Id
+    private String subjNm;
+    private String subjDesc;
     private String drFlnm;
     private String drFtnm;
     private String drLtnm;
-    private String subjNm;
-    @Id
     private String mprctSubjYn;
     @Id
     private Timestamp lastChgDt;
