@@ -53,9 +53,9 @@ spring:
     activate:
       on-profile: pnuh_dev
   datasource:
-    url: jdbc:oracle:thin:@database-4.cjedioeqnhkl.ap-northeast-2.rds.amazonaws.com/staging
-    username: pnuh
-    password: pnuh1234
+    url: jdbc:oracle:thin:@phr-db.ca2cwfdwtgty.ap-northeast-2.rds.amazonaws.com/ORCL
+    username: phr
+    password: phr12345
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
     database-platform: org.hibernate.dialect.Oracle12cDialect
@@ -98,3 +98,27 @@ spring:
 server:
   port: 9092
 
+---
+
+spring:
+  config:
+    activate:
+      on-profile: knuh
+  datasource:
+    url: jdbc:oracle:thin:@192.168.100.100:1521/MHWDB
+    username: devadminjjg
+    password: 'wjstkstlf1!'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: pnuhdba
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+
+server:
+  port: 9092
