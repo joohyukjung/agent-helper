@@ -32,15 +32,17 @@ public class AgreementDto {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
         String tempFhirPatIndexId = null;
         String tempFhirOrgIndexId = null;
+        String tempRcbPrctYmd = null;
         if(agreement.getFhirPatIndexId() != null) tempFhirPatIndexId = agreement.getFhirPatIndexId().toString();
         if(agreement.getFhirOrgIndexId() != null) tempFhirOrgIndexId = agreement.getFhirOrgIndexId().toString();
+        if(agreement.getRcbPrctYmd() != null) simpleDateFormat.format(agreement.getRcbPrctYmd());
         return AgreementDto.builder()
                 .cisn(agreement.getCisn())
                 .rrno(agreement.getRrno())
                 .patId(agreement.getPatId())
                 .utilUserId(agreement.getUtilUserId())
                 .pvsnInstCd(agreement.getPvsnInstCd())
-                .rcbPrctYmd(simpleDateFormat.format(agreement.getRcbPrctYmd()))
+                .rcbPrctYmd(tempRcbPrctYmd)
                 .regYmd(simpleDateFormat.format(agreement.getRegYmd()))
                 .fhirPatIndexId(tempFhirPatIndexId)
                 .fhirOrgIndexId(tempFhirOrgIndexId)
