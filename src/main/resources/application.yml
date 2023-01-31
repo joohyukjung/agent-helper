@@ -117,8 +117,8 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
-        format_sql: true
-        show_sql: true
+        format_sql: false
+        show_sql: false
         default_schema: mhw
 
 server:
