@@ -12,5 +12,5 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class MediaId implements Serializable {
     private Long seqNo;
-    private String patNo;
+    private String patId;
 }

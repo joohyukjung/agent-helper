@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.Getter;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 @Getter
 @Data
@@ -28,17 +29,21 @@ public class AgreementDto {
 
     public static AgreementDto from(Agreement agreement) {
         if (agreement == null) return null;
-
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        String tempFhirPatIndexId = null;
+        String tempFhirOrgIndexId = null;
+        if(agreement.getFhirPatIndexId() != null) tempFhirPatIndexId = agreement.getFhirPatIndexId().toString();
+        if(agreement.getFhirOrgIndexId() != null) tempFhirOrgIndexId = agreement.getFhirOrgIndexId().toString();
         return AgreementDto.builder()
                 .cisn(agreement.getCisn())
                 .rrno(agreement.getRrno())
                 .patId(agreement.getPatId())
                 .utilUserId(agreement.getUtilUserId())
                 .pvsnInstCd(agreement.getPvsnInstCd())
-                .rcbPrctYmd(agreement.getRcbPrctYmd())
-                .regYmd(agreement.getRegYmd())
-                .fhirPatIndexId(agreement.getFhirPatIndexId())
-                .fhirOrgIndexId(agreement.getFhirOrgIndexId())
+                .rcbPrctYmd(simpleDateFormat.format(agreement.getRcbPrctYmd()))
+                .regYmd(simpleDateFormat.format(agreement.getRegYmd()))
+                .fhirPatIndexId(tempFhirPatIndexId)
+                .fhirOrgIndexId(tempFhirOrgIndexId)
                 .useYn(agreement.getUseYn())
                 .lastMdfcnDt(agreement.getLastChgDt())
                 .build();

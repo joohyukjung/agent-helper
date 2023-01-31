@@ -9,5 +9,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class ImagingId implements Serializable {
     private Long seqNo;
-    private String patNo;
+    private String patId;
 }

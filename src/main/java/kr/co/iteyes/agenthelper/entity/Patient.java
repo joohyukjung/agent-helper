@@ -30,7 +30,7 @@ public class Patient {
     private String telno;
     private String emlAddr;
     private String sexCd;
-    private String brdt;
+    private Timestamp brdt;
     private String zip;
     private String addr;
     private String regnAddr;

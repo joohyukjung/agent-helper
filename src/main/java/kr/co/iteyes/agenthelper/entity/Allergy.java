@@ -23,7 +23,7 @@ public class Allergy {
     @Id
     private String patId;
     private String alrgDt;
-    private String mediBgngYmd;
+    private Timestamp mediBgngYmd;
     private String alrgCozDivCd;
     private String alrgCozDivNm;
     private String alrgCozCd;

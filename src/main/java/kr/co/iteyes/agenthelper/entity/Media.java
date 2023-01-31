@@ -19,9 +19,9 @@ public class Media {
     private Long seqNo;
     private Long rcptNo;
     @Id
-    private String patNo;
+    private String patId;
     private String createStat;
-    private String creatDt;
+    private Timestamp createDt;
     private String refTypeCd;
     private String refTypeNm;
     private String refTypeDesc;

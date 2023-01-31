@@ -23,7 +23,7 @@ public class DiagnosticRadio {
     @Id
     private String patId;
     private String inspDiv;
-    private String inspDt;
+    private Timestamp inspDt;
     private String inspCd;
     private String inspNm;
     private String inspTxt;

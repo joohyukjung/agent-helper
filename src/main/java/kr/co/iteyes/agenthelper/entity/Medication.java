@@ -18,10 +18,10 @@ public class Medication {
     private Long seqNo;
     @Id
     private Long rcptNo;
-    private Long mediBgngYmd;
+    private Timestamp mediBgngYmd;
     @Id
     private String patId;
-    private String rxDt;
+    private Timestamp rxDt;
     private String rxCd;
     private String rxNm;
     private String usge;

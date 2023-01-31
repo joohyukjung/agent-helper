@@ -4,7 +4,6 @@ import kr.co.iteyes.agenthelper.dto.AgreementDto;
 import kr.co.iteyes.agenthelper.dto.AgreementReqDto;
 import kr.co.iteyes.agenthelper.dto.AgreementUpdateDto;
 import kr.co.iteyes.agenthelper.entity.Agreement;
-import kr.co.iteyes.agenthelper.exception.DuplicateException;
 import kr.co.iteyes.agenthelper.exception.ResourceNotFoundException;
 import kr.co.iteyes.agenthelper.exception.ResourceNotValidException;
 import kr.co.iteyes.agenthelper.repository.AgreementRepository;
@@ -12,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -36,7 +36,7 @@ public class AgreementService {
                     .utilUserId(agreementReqDto.getUtilUserId())
                     .pvsnInstCd(Long.parseLong(agreementReqDto.getServiceUID()))
                     .useYn("Y")
-                    .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
+                    .regYmd(Timestamp.valueOf(new SimpleDateFormat("yyyyMMdd").format(new Date())))
                     .build();
             return AgreementDto.from(agreementRepository.save(newAgreement));
         }
@@ -49,7 +49,7 @@ public class AgreementService {
                 .utilUserId(agreementReqDto.getUtilUserId())
                 .pvsnInstCd(Long.parseLong(agreementReqDto.getServiceUID()))
                 .useYn("Y")
-                .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
+                .regYmd(Timestamp.valueOf(new SimpleDateFormat("yyyyMMdd").format(new Date())))
                 .build();
     }
 
@@ -75,13 +75,13 @@ public class AgreementService {
 
         Agreement agreement = agreementRepository.findById(utilUserId).orElseThrow(ResourceNotValidException::new);
 
-        String fhirPatIndexid = agreement.getFhirPatIndexId();
-        String fhirOrgIndexId = agreement.getFhirOrgIndexId();
+        Long fhirPatIndexid = agreement.getFhirPatIndexId();
+        Long fhirOrgIndexId = agreement.getFhirOrgIndexId();
 
         if(StringUtils.isNotBlank(agreementUpdateDto.getFhirPatIndexId())
             && StringUtils.isNotBlank(agreementUpdateDto.getFhirOrgIndexId())) {
-            fhirPatIndexid = agreementUpdateDto.getFhirPatIndexId();
-            fhirOrgIndexId = agreementUpdateDto.getFhirOrgIndexId();
+            fhirPatIndexid = Long.parseLong(agreementUpdateDto.getFhirPatIndexId());
+            fhirOrgIndexId = Long.parseLong(agreementUpdateDto.getFhirOrgIndexId());
 
             agreement.setFhirPatIndexId(fhirPatIndexid);
             agreement.setFhirOrgIndexId(fhirOrgIndexId);
@@ -93,7 +93,7 @@ public class AgreementService {
                 .patId(agreement.getPatId())
                 .utilUserId(utilUserId)
                 .pvsnInstCd(agreement.getPvsnInstCd())
-                .rcbPrctYmd(agreementUpdateDto.getRcbPrctYmd())
+                .rcbPrctYmd(Timestamp.valueOf(agreementUpdateDto.getRcbPrctYmd()))
                 .regYmd(agreement.getRegYmd())
                 .fhirPatIndexId(fhirPatIndexid)
                 .fhirOrgIndexId(fhirOrgIndexId)

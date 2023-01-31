@@ -21,8 +21,8 @@ public class Imaging {
     private Long seqNo;
     private Long rcptNo;
     @Id
-    private String patNo;
-    private String inspDt;
+    private String patId;
+    private Timestamp inspDt;
     private String instpSts;
     private String dcmSerieseUid;
     private String modalCd;

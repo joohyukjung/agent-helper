@@ -23,8 +23,8 @@ public class Encounter {
     private String patId;
     private String drId;
     private String prctDvcd;
-    private String mediBgngYmd;
-    private String mediEndYmd;
+    private Timestamp mediBgngYmd;
+    private Timestamp mediEndYmd;
     @Id
     private Timestamp lastChgDt;
 }

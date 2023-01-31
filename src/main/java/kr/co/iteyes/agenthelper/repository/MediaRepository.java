@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface MediaRepository extends JpaRepository<Media, MediaId> {
-    @Query("select m from Media m where m.patNo = :patientId and m.rcptNo = :rcptNo")
+    @Query("select m from Media m where m.patId = :patientId and m.rcptNo = :rcptNo")
     List<Media> findAllResource(String patientId, Long rcptNo);
 }
