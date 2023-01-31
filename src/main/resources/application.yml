@@ -123,3 +123,29 @@ spring:
 
 server:
   port: 9092
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: knuh_dev
+  datasource:
+    url: jdbc:oracle:thin:@192.168.100.100:1521/MHWDB
+    username: devadminjjg
+    password: 'wjstkstlf1!'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: mhw
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_schema: mhw
+
+server:
+  port: 9092
