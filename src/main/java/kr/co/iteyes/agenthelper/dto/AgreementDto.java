@@ -29,7 +29,6 @@ public class AgreementDto {
 
     public static AgreementDto from(Agreement agreement) {
         if (agreement == null) return null;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
         return AgreementDto.builder()
                 .cisn(agreement.getCisn())
                 .rrno(agreement.getRrno())
@@ -37,7 +36,7 @@ public class AgreementDto {
                 .utilUserId(agreement.getUtilUserId())
                 .pvsnInstCd(agreement.getPvsnInstCd())
                 .rcbPrctYmd(agreement.getRcbPrctYmd())
-                .regYmd(simpleDateFormat.format(agreement.getRegYmd()))
+                .regYmd(agreement.getRegYmd())
                 .fhirPatIndexId(agreement.getFhirPatIndexId())
                 .fhirOrgIndexId(agreement.getFhirOrgIndexId())
                 .useYn(agreement.getUseYn())
