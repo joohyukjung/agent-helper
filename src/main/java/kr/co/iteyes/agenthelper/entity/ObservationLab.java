@@ -23,7 +23,7 @@ public class ObservationLab {
     @Id
     private String patId;
     private String inspDiv;
-    private Timestamp inspDt;
+    private String inspDt;
     private String inspCd;
     private String inspNm;
     private String inspTxt;

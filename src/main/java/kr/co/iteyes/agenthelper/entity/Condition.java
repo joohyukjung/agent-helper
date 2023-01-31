@@ -27,13 +27,13 @@ public class Condition {
     @Id
     private String patId;
     private String drId;
-    private Timestamp diagYmd;
+    private String diagYmd;
     private String diagCd;
     private String diagNm;
     private String diagTxt;
     private String diagStcd;
     private String diagccDiv;
-    private Timestamp mediBgngYmd;
-    private Timestamp mediEndYmd;
+    private String mediBgngYmd;
+    private String mediEndYmd;
     private Timestamp lastChgDt;
 }

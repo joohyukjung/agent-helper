@@ -21,19 +21,19 @@ public class Agreement {
     @Id
     private String utilUserId;
     private Long pvsnInstCd;
-    private Timestamp rcbPrctYmd;
-    private Timestamp regYmd;
-    private Long fhirPatIndexId;
-    private Long fhirOrgIndexId;
+    private String rcbPrctYmd;
+    private String regYmd;
+    private String fhirPatIndexId;
+    private String fhirOrgIndexId;
     private String useYn;
     @UpdateTimestamp
     private Timestamp lastChgDt;
 
-    public void setFhirPatIndexId(Long fhirPatIndexId) {
+    public void setFhirPatIndexId(String fhirPatIndexId) {
         this.fhirPatIndexId = fhirPatIndexId;
     }
 
-    public void setFhirOrgIndexId(Long fhirOrgIndexId) {
+    public void setFhirOrgIndexId(String fhirOrgIndexId) {
         this.fhirOrgIndexId = fhirOrgIndexId;
     }
 }

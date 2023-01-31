@@ -19,7 +19,7 @@ import java.sql.Timestamp;
 public class Document {
     @Id
     private String patId;
-    private Timestamp docCrtDt;
+    private String docCrtDt;
     private String docTypCd;
     private String docTypNm;
     private String docTypTxt;

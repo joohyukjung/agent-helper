@@ -22,7 +22,7 @@ public class Procedure {
     private Long rcptNo;
     @Id
     private String patId;
-    private Timestamp srgDt;
+    private String srgDt;
     private String srgCd;
     private String srgNm;
     private String srgTxt;

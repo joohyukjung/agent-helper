@@ -22,7 +22,7 @@ public class Imaging {
     private Long rcptNo;
     @Id
     private String patId;
-    private Timestamp inspDt;
+    private String inspDt;
     private String instpSts;
     private String dcmSerieseUid;
     private String modalCd;

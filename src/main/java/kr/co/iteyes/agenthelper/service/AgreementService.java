@@ -36,7 +36,7 @@ public class AgreementService {
                     .utilUserId(agreementReqDto.getUtilUserId())
                     .pvsnInstCd(Long.parseLong(agreementReqDto.getServiceUID()))
                     .useYn("Y")
-                    .regYmd(Timestamp.valueOf(new SimpleDateFormat("yyyyMMdd").format(new Date())))
+                    .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                     .build();
             return AgreementDto.from(agreementRepository.save(newAgreement));
         }
@@ -49,7 +49,7 @@ public class AgreementService {
                 .utilUserId(agreementReqDto.getUtilUserId())
                 .pvsnInstCd(Long.parseLong(agreementReqDto.getServiceUID()))
                 .useYn("Y")
-                .regYmd(Timestamp.valueOf(new SimpleDateFormat("yyyyMMdd").format(new Date())))
+                .regYmd(new SimpleDateFormat("yyyyMMdd").format(new Date()))
                 .build();
     }
 
@@ -75,13 +75,13 @@ public class AgreementService {
 
         Agreement agreement = agreementRepository.findById(utilUserId).orElseThrow(ResourceNotValidException::new);
 
-        Long fhirPatIndexid = agreement.getFhirPatIndexId();
-        Long fhirOrgIndexId = agreement.getFhirOrgIndexId();
+        String fhirPatIndexid = agreement.getFhirPatIndexId();
+        String fhirOrgIndexId = agreement.getFhirOrgIndexId();
 
         if(StringUtils.isNotBlank(agreementUpdateDto.getFhirPatIndexId())
             && StringUtils.isNotBlank(agreementUpdateDto.getFhirOrgIndexId())) {
-            fhirPatIndexid = Long.parseLong(agreementUpdateDto.getFhirPatIndexId());
-            fhirOrgIndexId = Long.parseLong(agreementUpdateDto.getFhirOrgIndexId());
+            fhirPatIndexid = agreementUpdateDto.getFhirPatIndexId();
+            fhirOrgIndexId = agreementUpdateDto.getFhirOrgIndexId();
 
             agreement.setFhirPatIndexId(fhirPatIndexid);
             agreement.setFhirOrgIndexId(fhirOrgIndexId);
@@ -93,7 +93,7 @@ public class AgreementService {
                 .patId(agreement.getPatId())
                 .utilUserId(utilUserId)
                 .pvsnInstCd(agreement.getPvsnInstCd())
-                .rcbPrctYmd(Timestamp.valueOf(agreementUpdateDto.getRcbPrctYmd()))
+                .rcbPrctYmd(agreementUpdateDto.getRcbPrctYmd())
                 .regYmd(agreement.getRegYmd())
                 .fhirPatIndexId(fhirPatIndexid)
                 .fhirOrgIndexId(fhirOrgIndexId)
