@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
+import java.math.BigInteger;
 import java.sql.Timestamp;
 
 @Entity
@@ -18,8 +19,8 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ObservationLab {
     @Id
-    private Long seqNo;
-    private Long rcptNo;
+    private BigInteger seqNo;
+    private BigInteger rcptNo;
     @Id
     private String patId;
     private String inspDiv;

@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
+import java.math.BigInteger;
 import java.sql.Timestamp;
 
 @Entity
@@ -18,7 +19,7 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Encounter {
     @Id
-    private Long rcptNo;
+    private BigInteger rcptNo;
     private String rcptStsCd;
     private String patId;
     private String drId;

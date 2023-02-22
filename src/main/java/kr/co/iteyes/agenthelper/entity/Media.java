@@ -6,6 +6,7 @@ import kr.co.iteyes.agenthelper.entity.id.MediaId;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.sql.Blob;
 import java.sql.Timestamp;
 
@@ -16,8 +17,8 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Media {
     @Id
-    private Long seqNo;
-    private Long rcptNo;
+    private BigInteger seqNo;
+    private BigInteger rcptNo;
     @Id
     private String patId;
     private String createStat;

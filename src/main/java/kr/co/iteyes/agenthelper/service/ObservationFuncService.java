@@ -5,6 +5,7 @@ import kr.co.iteyes.agenthelper.repository.ObservationFuncRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
 
@@ -17,6 +18,6 @@ public class ObservationFuncService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return observationFuncRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getRcptNo()));
+                new BigInteger(reqParam.getRcptNo()));
     }
 }

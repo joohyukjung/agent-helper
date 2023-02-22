@@ -5,6 +5,7 @@ import kr.co.iteyes.agenthelper.repository.ProcedureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service("procedure")
@@ -16,6 +17,6 @@ public class ProcedureService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return procedureRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getRcptNo()));
+                new BigInteger(reqParam.getRcptNo()));
     }
 }

@@ -5,6 +5,7 @@ import kr.co.iteyes.agenthelper.repository.ImagingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service("imaging")
@@ -16,6 +17,6 @@ public class ImagingService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return imagingRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getRcptNo()));
+                new BigInteger(reqParam.getRcptNo()));
     }
 }

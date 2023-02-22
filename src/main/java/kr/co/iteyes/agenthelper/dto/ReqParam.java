@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.math.BigInteger;
 
 @Data
 public class ReqParam implements Serializable {
@@ -25,7 +26,7 @@ public class ReqParam implements Serializable {
 
     public String getRcptNo() {
         try {
-            Long.parseLong(rcptNo);
+            new BigInteger(rcptNo);
             return rcptNo;
         } catch (Exception e) {
             return "0";

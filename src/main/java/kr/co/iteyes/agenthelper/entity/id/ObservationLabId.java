@@ -4,10 +4,11 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 @EqualsAndHashCode
 @NoArgsConstructor
 public class ObservationLabId implements Serializable {
-    private Long seqNo;
+    private BigInteger seqNo;
     private String patId;
 }

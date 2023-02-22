@@ -149,3 +149,186 @@ spring:
 
 server:
   port: 9092
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: agent_test
+  datasource:
+    url: jdbc:oracle:thin:@phr-db-final.ca2cwfdwtgty.ap-northeast-2.rds.amazonaws.com/ORCL
+    username: phr
+    password: phr12345
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+server:
+  port: 9092
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: kwnuh
+  datasource:
+    url: jdbc:oracle:thin:@150.191.201.210:1521/KMIS
+    username: phr_db
+    password: 'phr_db'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: PHR_DB
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+        default_schema: PHR_DB
+
+server:
+  port: 9092
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: kwnuh_dev
+  datasource:
+    url: jdbc:oracle:thin:@150.191.201.210:1521/KMIS
+    username: phr_db
+    password: 'phr_db'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: PHR_DB
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_schema: PHR_DB
+
+server:
+  port: 9092
+
+---
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: jbuh_dev
+  datasource:
+    url: jdbc:oracle:thin:@172.31.150.20:1521:CDWDB
+    username: mhfhirmgr
+    password: 'mhfhirmgrahdkr4n!'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: MHFHIRMGR
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_schema: MHFHIRMGR
+
+server:
+  port: 9092
+
+---
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: jbuh
+  datasource:
+    url: jdbc:oracle:thin:@172.31.150.20:1521:CDWDB
+    username: mhfhirmgr
+    password: 'mhfhirmgrahdkr4n!'
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: MHFHIRMGR
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+        default_schema: MHFHIRMGR
+
+server:
+  port: 9092
+
+---
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: gnuh_dev
+  datasource:
+    url: jdbc:oracle:thin:@192.9.31.42:1521:SDB4PHRT
+    username: HPHR
+    password: 'gNuh106phr!)^'
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+server:
+  port: 9092
+
+---
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: gnuh
+  datasource:
+    url: jdbc:oracle:thin:@192.9.31.42:1521:SDB4PHRT
+    username: HPHR
+    password: 'gNuh106phr!)^'
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+
+server:
+  port: 9092
+
+---

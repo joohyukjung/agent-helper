@@ -6,6 +6,7 @@ import kr.co.iteyes.agenthelper.entity.id.ObservationFuncId;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.sql.Timestamp;
 
 @Entity
@@ -15,8 +16,8 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ObservationFunc {
     @Id
-    private Long seqNo;
-    private Long rcptNo;
+    private BigInteger seqNo;
+    private BigInteger rcptNo;
     @Id
     private String patId;
     private String inspDiv;

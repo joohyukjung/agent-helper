@@ -6,6 +6,7 @@ import kr.co.iteyes.agenthelper.entity.id.MedicationId;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.sql.Timestamp;
 
 @Entity
@@ -15,9 +16,9 @@ import java.sql.Timestamp;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Medication {
     @Id
-    private Long seqNo;
+    private BigInteger seqNo;
     @Id
-    private Long rcptNo;
+    private BigInteger rcptNo;
     private String mediBgngYmd;
     @Id
     private String patId;

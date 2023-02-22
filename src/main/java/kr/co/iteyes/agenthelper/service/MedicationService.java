@@ -5,6 +5,7 @@ import kr.co.iteyes.agenthelper.repository.MedicationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service("medication")
@@ -15,6 +16,6 @@ public class MedicationService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return medicationRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getRcptNo()));
+                new BigInteger(reqParam.getRcptNo()));
     }
 }

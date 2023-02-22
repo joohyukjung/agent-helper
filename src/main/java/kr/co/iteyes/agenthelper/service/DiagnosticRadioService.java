@@ -5,6 +5,7 @@ import kr.co.iteyes.agenthelper.repository.DiagnosticRadioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Service("diagnostic_radio")
@@ -16,6 +17,6 @@ public class DiagnosticRadioService implements ResourceService {
     @Override
     public List getResource(ReqParam reqParam) {
         return diagnosticRadioRepository.findAllResource(reqParam.getId(),
-                Long.parseLong(reqParam.getRcptNo()));
+                new BigInteger(reqParam.getRcptNo()));
     }
 }

@@ -5,9 +5,10 @@ import kr.co.iteyes.agenthelper.entity.id.MediaId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public interface MediaRepository extends JpaRepository<Media, MediaId> {
     @Query("select m from Media m where m.patId = :patientId and m.rcptNo = :rcptNo")
-    List<Media> findAllResource(String patientId, Long rcptNo);
+    List<Media> findAllResource(String patientId, BigInteger rcptNo);
 }

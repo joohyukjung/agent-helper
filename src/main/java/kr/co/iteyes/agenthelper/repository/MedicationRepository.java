@@ -5,10 +5,11 @@ import kr.co.iteyes.agenthelper.entity.id.MedicationId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
 public interface MedicationRepository extends JpaRepository<Medication, MedicationId> {
     @Query("select m from Medication m where m.patId = :patientId and m.rcptNo = :rcptNo")
-    List<Medication> findAllResource(String patientId, Long rcptNo);
+    List<Medication> findAllResource(String patientId, BigInteger rcptNo);
 }
