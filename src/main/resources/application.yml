@@ -53,10 +53,14 @@ spring:
     activate:
       on-profile: pnuh_dev
   datasource:
-    url: jdbc:oracle:thin:@phr-db.ca2cwfdwtgty.ap-northeast-2.rds.amazonaws.com/ORCL
-    username: phr
-    password: phr12345
+    url: jdbc:oracle:thin:@200.100.1.116:1527/testdb
+    #    username: pnuhdba
+    #    password: pnuhdba
+    username: mydata
+    password: '*mydata128*'
     driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      schema: mydata
   jpa:
     database-platform: org.hibernate.dialect.Oracle12cDialect
     hibernate:
@@ -65,6 +69,7 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
+        default_schema: mydata
 
 server:
   port: 9092

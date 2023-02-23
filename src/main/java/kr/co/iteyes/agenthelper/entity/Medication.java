@@ -25,6 +25,7 @@ public class Medication {
     private String rxDt;
     private String rxCd;
     private String rxNm;
+    private String rxTxt;
     private String usge;
     private String medcChlCd;
     private String medcChlNm;
